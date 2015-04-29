@@ -1,5 +1,7 @@
 \chapter{Twierdzenie White'a}
 
+\section{Wstęp}
+
 Niech $p$ będzie dowolną nieparzystą liczbą pierwszą. Rozważmy permutacje $t :
 x \rightarrow  x+1$ i $e: x \rightarrow x^p$ zbioru liczb rzeczywistych. W 1986
 Samuel White \cite{whi88} udowodnił, że dla dowolnych liczb liczb całkowitych
@@ -7,3 +9,70 @@ $a_1, \ldots, a_n, k_1, \ldots, k_n$, gdzie $a_2, \ldots, a_n, k_1, \ldots,
 k_{n-1}$ są niezerowe, odwzorowanie $t^{a_1}e^{k_1}\ldots t^{a_n}e^{k_n}$ nie
 jest identycznością. Innymi słowy, podgrupa $G_p$ grupy $\Sigma_\R$ generowana
 przez $t, e$ jest wolna.
+
+W tym rozdziale przedstawię dowód tego twierdzenia oraz faktów pomocniczych.
+
+\section{Przestępny łańcuch}
+\label{sec:przelan}
+
+Niech $K = \bar{\Q}$ - domknięcie ciała liczb wymiernych, czyli zbiór wszystkich
+liczb algebraicznych.
+
+Niech $\xi$ to będzie dowolna liczba przestępna. Potrzebujemy zdefiniować ciąg
+liczb przestępnych będących wynikiem kolejnych aplikacji liter tworzących słowo
+$w$ na $\xi$. W tym celu oznaczmy sobie możliwe elementy. Niech $e_m: x
+\rightarrow x^{p^m}, m \geq 1$ a jej odwrotność to $r_m: x \rightarrow
+x^{\frac{1}{p^m}}, m \geq 1$. Translację oznaczymy jako $t_a: x \rightarrow x +
+a, a \in \N, a \neq 0$.  Wówczas słowo $w$ to ciąg symboli postaci $w =
+v_1\ldots v_n$, gdzie $v_i$ to $t_a$, $e_m$, lub $r_m$. 
+
+Definiujemy $n+1$-elementowy ciąg $\left(\xi_i\right)$ jako: $\xi_1 = \xi,
+\xi_{j+1} = \xi_{j}v_j, j \in \{1, \ldots, n\}$. W szczególności $\xi_{n+1} =
+w(\xi)$.
+
+Rozważmy teraz ciąg rozszerzeń ciała $K$:
+$
+K\left(\xi_1\right),
+K\left(\xi_1, \xi_2\right),
+K\left(\xi_1, \xi_3\right),
+\ldots,
+K\left(\xi_1, \xi_{n+1}\right)$.
+
+Twierdzę, że ten ciąg tworzy wieżę:
+
+\begin{equation}
+K\left(\xi_1\right) \subseteq
+K\left(\xi_1, \xi_2\right) \subseteq
+K\left(\xi_1, \xi_3\right) \subseteq 
+\ldots
+\subseteq
+K\left(\xi_1, \xi_{n+1}\right)
+\label{eq:tower}
+\end{equation}
+
+Załóżmy, że \ref{eq:tower} zostało udowodnione. Z tego ciągu wynika nierówność
+$w\left(\xi\right) \neq \xi$. Aby to zauważyć wystarczy rozważyć dwa przypadki.
+Jeśli wśród $v_i$ nie ma pierwiastków to $w$ jest wielomianem nad $\Q$. Wówczas
+$w(\xi) = \xi$ jest sprzeczne z przestępnością $\xi$ zatem $w(\xi) \neq \xi$.
+Niech, więc $v_j = r_m$ będzie pierwszym pierwiastkiem wśród napisu $w$. Wówczas
+$\xi_j \in K\left(\xi_1\right)$ i pokażę również, że $\xi_{j}^{\frac{1}{p}} \not
+\in K(\xi_1)$. Zatem $K\left(\xi_1\right) \subset K\left(\xi_1,
+\xi_{j+1}\right)$. Z \ref{eq:tower} mamy zatem, że $K\left(\xi_1\right) \neq
+  K\left(\xi_1, \xi_{n+1}\right)$, czyli $w(\xi) \neq \xi$.
+
+Dowód \ref{eq:tower} zostanie przeprowadzony indukcyjne, równolegle z dwoma
+innymi własnościami.
+
+\section{Podłańcuch}
+
+Zamiast rozpatrywać $w$ jako napis symboli $v_i$, zbierzemy je w sylaby: $s_1,
+\ldots, s_k$, gdzie każda sylaba kończy się pierwiastkiem $r_{m_j}$. Niech słowo
+$f \in G_p$ będzie słowiem wielomianowym, jeśli $f$ składa się tylko z
+translacji $t_a$ i dodatnich potęg $e_m$, czyli $f(x)$ jest po prostu
+wielomianem. Możemy wówczas napisać, że $w = s_1\ldots s_k$, gdzie $s_j =
+f_jr_{m_j}$, $f_j$ jest $j$-tym słowem wielomianowym. Aby zachować proste
+oznaczenia pozwalamy na to by $f_1 = x$  i $s_k = f_k$, w tym przypadku będziemy
+przyjmowali, że $m_k = 0$. 
+
+Podobnie jak w 
+\ref{sec:przelan} dfiniujemy podłańcuch $\left\{\mu_1, \ldots, \mu_{k+1}\right\}$
