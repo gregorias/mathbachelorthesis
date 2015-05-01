@@ -6,11 +6,20 @@ Niech $p$ będzie dowolną nieparzystą liczbą pierwszą. Rozważmy permutacje 
 x \rightarrow  x+1$ i $e: x \rightarrow x^p$ zbioru liczb rzeczywistych. W 1986
 Samuel White \cite{whi88} udowodnił, że dla dowolnych liczb liczb całkowitych
 $a_1, \ldots, a_n, k_1, \ldots, k_n$, gdzie $a_2, \ldots, a_n, k_1, \ldots,
-k_{n-1}$ są niezerowe, odwzorowanie $t^{a_1}e^{k_1}\ldots t^{a_n}e^{k_n}$ nie
-jest identycznością. Innymi słowy, podgrupa $G_p$ grupy $\Sigma_\R$ generowana
-przez $t, e$ jest wolna.
+k_{n-1}$ są niezerowe, odwzorowanie 
 
-W tym rozdziale przedstawię dowód tego twierdzenia oraz faktów pomocniczych.
+\begin{equation}
+  t^{a_1}e^{k_1}\ldots t^{a_n}e^{k_n}
+\label{eq:gp_element}
+\end{equation}
+
+nie jest identycznością.  Innymi słowy, podgrupa $G_p$ grupy $\Sigma_\R$
+generowana przez $t, e$ jest wolna.
+
+Słowa zredukowane postaci \ref{eq:gp_element}, gdzie wykładniki $k_i$ są
+nieujemne, będziemy nazywać \textbf{słowami wielomianowymi}.
+
+W tym rozdziale przedstawimy dowód tego twierdzenia oraz faktów pomocniczych.
 
 \section{Przestępny łańcuch}
 \label{sec:przelan}
@@ -75,4 +84,41 @@ oznaczenia pozwalamy na to by $f_1 = x$  i $s_k = f_k$, w tym przypadku będziem
 przyjmowali, że $m_k = 0$. 
 
 Podobnie jak w 
-\ref{sec:przelan} dfiniujemy podłańcuch $\left\{\mu_1, \ldots, \mu_{k+1}\right\}$
+\ref{sec:przelan} definiujemy podłańcuch $\left\{\mu_1, \ldots,
+\mu_{k+1}\right\}$ jako $\mu_1 = \xi_1 = \xi, \mu_{j+1} = s_j\left(\mu_j\right)$
+dla $1 \leq j \leq k$. Wówczas $\mu_{k+1} = \xi_{n+1} = w(\xi)$.
+
+Zauważmy, że jeśli zachodzi \ref{eq:tower} to zachodzi też następujące:
+
+\[
+  K\left(\mu_1\right) \subseteq
+  K\left(\mu_1, \mu_2\right) \subseteq
+  \ldots \subset
+  K\left(\mu_1, \mu_{k+1}\right)
+\]
+
+Pokazaliśmy już, że pierwsze zawieranie jest ścisłe. Drugą rzeczą, którą
+będziemy dowodzić jest właśnie:
+
+\begin{equation}
+  K(\mu_1) \subset
+  K(\mu_1, \mu_2) \subset
+  \ldots \subset
+  K(\mu_1, \mu_{k+1})
+  \label{eq:strict_tower}
+\end{equation}
+
+Jeśli $m_k = 0$ to ostatnie zawieranie nie jest ścisłe.
+
+[TODO czy zawieranie ścisłe to właściwy zwrot]
+
+Do trzeciej własności zauważmy, że $\mu_2^{p^{m_1}} = f_1\left(\mu_1\right)$.
+Zatem $K\left(\mu_1\right)\left(\sqrt[p^{m_1 -
+1}]{f_1\left(\mu_1\right)}\right)$ jest rozszerzeniem prostym
+$K\left(\mu_1\right)$ o stopniu $p$.
+[TODO w pracy tutaj jest pierwiastek stopnia p i rozszerzenia stopnia p. Czy to
+jest błąd?]
+To rozszerzenie jest zawarte w $K\left(\mu_1, \mu_{k+1}\right)$. Czy może
+istnieć inne rozszerzenie proste o tej własności? Okazuje się, że nie.
+
+\section{Rezultat}
