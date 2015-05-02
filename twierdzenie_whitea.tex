@@ -122,3 +122,25 @@ To rozszerzenie jest zawarte w $K\left(\mu_1, \mu_{k+1}\right)$. Czy może
 istnieć inne rozszerzenie proste o tej własności? Okazuje się, że nie.
 
 \section{Rezultat}
+
+Będziemy dowodzić 3 fakty równoległą indukcyjną po długości $n$ słowa $w$.
+
+Oznaczmy $K\left(\mu_1, \mu_j\right)$ jako $K_j$.
+
+\begin{theorem}
+  Niech $w = v_1 \ldots v_n = s_1 \ldots s_k$ będzie słowem w $G_p$ i $\xi$
+  rzeczywistą liczbą przestępną. Wówczas
+
+  \begin{description}
+    \item{$H_1$} 
+      $K\left(\xi_1\right)\subseteq
+      K\left(\xi_1, \xi_2\right)\subseteq
+      \ldots \subseteq
+      K\left(\xi_1, \xi_{n+1}\right)$
+    \item{$H_2$}
+      $K_1 \subset K_2 \subset \ldots \subset K_{k+1}$
+    \item{$H_3$}
+      Jeśli $F$ jest prostym rozszerzeniem $K_1$ rzędu $p$  zawartym w $K_{k+1}$
+      to $F \subseteq K_2$.
+  \label{th:hypothesis_h}
+\end{theorem}
