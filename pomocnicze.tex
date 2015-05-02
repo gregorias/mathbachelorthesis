@@ -1,0 +1,95 @@
+\chapter{Pomocnicze lematy}
+\section{Nietrywialne pierwiastki wielomianów nie należą do $\overline{\Q}(x)$}
+\begin{lemma}
+  Niech $a \in \overline{\Q}, a \neq 0, f(x) \in \overline{\Q}[x], \deg f(x)
+  \neq 0$ i $p \in \N$ pierwsza.  Wówczas nie istnieje taka funkcja wymierna
+  $w(x) \in \overline{\Q}(x)$, że $f(x)^{p} + a = w(x)^p$. Innymi słowy
+  wielomiany niebędące trywialnie $p$-tymi potęgami nie posiadają $p$-tego
+  pierwiastka w ciele funkcji wymiernych.
+\end{lemma}
+
+\begin{proof}
+Załóżmy przeciwnie.
+
+Jeśli $w(x) = \frac{m(x)}{n(x)}$, gdzie $m(x), n(x) \in \overline{\Q}[x], \deg
+n(x) \neq 0$ i jest to ułamek nieskracalny, to w równaniu: $f(x)^{p} + a =
+\frac{m(x)^p}{n(x)^p}$ po lewej stronie mamy wielomian. Zatem $n(x)^p | m(x)^p$,
+ale założyliśmy, ze $n(x) \! \not| m(x)$. Sprzeczność.
+
+Zatem $w(x) = g(x), g(x) \in \overline{\Q}[x]$. Mamy:
+\begin{eqnarray*}
+  f(x)^p + a &=& g(x)^p \\
+  a &=& g(x)^p - f(x)^p\\
+  a &=& \left(g(x) - f(x)\right)\left(\sum_{i=0}^{p-1}g(x)^if(x)^{p-1 - i}\right)\\
+\end{eqnarray*}
+
+Możemy założyć, że $f(x)$ jest wielomianem monicznym. Z końcowego równania $g(x)
+- f(x)$ dzielli $a$, zatem $g, f$ są tego samego stopnia. Zatem w prawym
+czynniku mamy wielomian stopnia $(p-1)\deg g(x)$ co jest większe od zera.
+Sprzeczność.
+\end{proof}
+
+\section{Lematy o słowach wielomianowych} 
+\begin{lemma}
+  Każdy pierwiastek słowa wielomianowego $f$ jest pierwiastkiem o krotności
+  będącej potęgą $p$.
+\end{lemma}
+
+\begin{proof}
+Definiujemy ciąg słów wielomianowych $f_1, f_2, \ldots, f_{l+1}$ jako ciąg
+kolejnych aplikacji funkcji postaci $(x+a_i)^{p^{k_i}}$ z postaci
+\ref{eq:gp_element}. Tj. $f_1(x) = \left(x + a_1\right)^{p^{k_1}},
+f_2(x) = \left(f_1(x) + a_2\right)^{p^{k_2}}, \ldots, f_{l+1} = f$.
+
+Różniczkując otrzymujemy:
+\[f' = \prod_{i=1}^l p^{k_i} f_i^{p^{k_i - 1}}\]
+
+Zatem każdy wielokrotny pierwiastek $f$ jest także perwiastkiem co najmniej
+jednego z wielomianów $f_j$. Niech $f_{j_1}, \ldots, f_{j_s}$, gdzie $1 \leq j_1
+\leq \ldots \leq j_s \leq l$ będą wszystkimi wyrazami z ciągu, dla ktorych dany
+pierwiastek $f$ jest również i ich pierwiastkiem. Wówczas stopień tego
+pierwiastka to $\prod_{i=1}^s p^{k_{i_s}}$.
+\end{proof}
+
+\begin{lemma}
+  Niech $f$ będzie słowem wielomianowym ($a_1, \ldots, a_{l+1} \neq 0$) i
+  $\omega$ ($\neq 1$) będzie $p$-tym pierwiastkiem jedności w $\overline{\Q}$.
+  Wówczas identyczność postaci
+  \begin{equation}
+    f(x)f^t(\omega x)g\left(x^p\right) = h^p(x)
+    \label{eq:pol_lemma}
+  \end{equation}
+
+  gdzie $t \in \Z$ a $g, h \in \overline{Q}[x]$ jest niemożliwa.
+\end{lemma}
+
+\begin{proof}
+  [TODO Czy w ciele overlineQ pierwiastki p-tego stopnia są różne?]
+
+  Jeśli \ref{eq:pol_lemma} zachodzi to możemy założyć, że $0 \leq t \leq p - 1$
+  poprzez włączenie $f^p(\omega x)$ do $h^p(x)$. 
+
+  [TODO nie rozumiem jak] Dodatkowo z \ref{eq:pol_lemma} mamy
+  \begin{equation}
+    f(x)f^t(\omega x) = g\left(x^p\right)h^p(x)
+    \label{eq:pol_lemma_right}
+  \end{equation}
+
+  Niech $\alpha$ będzie jednokrotnym pierwiastkiem $f$. Wówczas każdy
+  pierwiastek $\beta$ wielomianiu $\left(x + a_1\right)^{q_1} - \left(\alpha +
+  a_1\right)^{q_1}$ jest również jednokrotnym pierwiastkiem $f$. Tak jest, bo
+  wówczas $f_1(\beta) = f_1(\alpha)$, a $f_1(\alpha)$ jest jednokrotnym
+  pierwiastkiem $f_2f_3 \ldots f_{l}$.
+
+  Niech, więc $f^*(x)$ będzie iloczynem czynników $(x-\alpha)$, gdzie $\alpha$
+  jest jednokrotnym pierwiastkiem $f$. Wówczas
+\end{proof}
+
+
+
+
+
+
+
+
+

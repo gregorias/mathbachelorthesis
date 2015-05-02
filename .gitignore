@@ -7,3 +7,8 @@
 *.dvi
 *.idx
 *.toc
+
+# vim files
+#
+*.swp
+*.swo
