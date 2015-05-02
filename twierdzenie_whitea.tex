@@ -21,6 +21,13 @@ nieujemne, będziemy nazywać \textbf{słowami wielomianowymi}.
 
 W tym rozdziale przedstawimy dowód tego twierdzenia oraz faktów pomocniczych.
 
+\begin{defin}[Rozszerzenie czysto przestępne]
+  Rozszerzenie $L$ ciała $K$ nazywamy czysto przestępnym wtw., gdy istnieje
+  zbiór algebraicznie niezależny $A \subseteq L$ taki, że $K(A) = L$. Równoważne
+  gdy $L$ jest izomorficzne z ciałem funkcji wymiernych w ciele $K$ nad
+  zmiennymi $\left\{X_a : a \in A\right\}$.
+\end{defin}
+
 \section{Przestępny łańcuch}
 \label{sec:przelan}
 
@@ -178,4 +185,49 @@ następującego schematu:
 \Rightarrow H(n+1)\]
 
 Zauważmy, że jeśli słowo $w$ zaczyna się lub kończy przesunięciem to krok
-indukcyjny jest łatwy do udowodnienia. Zaiste [TODO]
+indukcyjny jest łatwy do udowodnienia. Zaiste, jeśli $w$ kończy się translacją
+to $H_2(n+1)$ trywialnie wynika z $H(n)$.  Z równości $K\left(\xi_1,
+\xi_{n}\right) = K\left(\xi_1, \xi_{n} + a\right), \xi_{n+1} = \xi_n + a$ wynika
+$H_1(n+1), H_3(n+1)$. Jeśli $w$ zaczyna się translacją to podobnie tylko tym
+razem korzystamy z równości $K\left(\xi_1, \xi_1 + a\right) =
+K\left(\xi_1\right)$. Zatem będziemy zakładać, że $w$ zaczyna i kończy się $e_m$
+lub $r_m$ dla pewnego $m \geq 1$.
+
+\section{Dowód $H_1(n+1)$}
+Przyjmujemy notację i założenia z poprzednich sekcji oraz hipotezę $H(n)$.
+Będziemy też używać notacji typu $\left(\xi_i, \xi_j\right)$ do oznaczenia
+podsłowa $v_i\ldots w_{j-1}$ słowa $w$ którego działanie przekształca $\xi_i$ na
+$\xi_j$. Dokonamy teraz dodatkowe obserwacje i poprawki.
+
+Z $H_1(n)$ zaaplikowanego do $\left(\xi_1, \xi_{n+1}\right)$ oraz $\left(\xi_2,
+\xi_{n+2}\right)$ mamy
+
+\begin{equation}
+  K\left(\xi_1\right) \subseteq
+  K\left(\xi_1, \xi_2\right) \subseteq
+  \ldots \subseteq
+  K\left(\xi_1, \xi_{n+1}\right)
+  \label{eq:h_1_first}
+\end{equation}
+
+\begin{equation}
+  K\left(\xi_2\right) \subseteq
+  K\left(\xi_2, \xi_3\right) \subseteq
+  \ldots \subseteq
+  K\left(\xi_2, \xi_{n+2}\right)
+  \label{eq:h_1_second}
+\end{equation}
+
+Załóżmy, że $H_1(n+1)$ nie zachodzi, tj. $K\left(\xi_1, \xi_{n+2}\right)$ nie
+zawiera $K\left(\xi_1, \xi_{n+1}\right)$. Wówczas $v_{n+1} = e_m$ i $m_k = 0$.
+  $\xi_{n+2} = v_{n+1}\left(\xi_{n+1}\right) \in K\left(\xi_{n+1}\right)$, czyli
+  $K\left(\xi_1, \xi_{n+2}\right) \subset K\left(\xi_1, \xi_{n+1}\right)$.
+
+\begin{verbatim}
+[TODO Napisać, że jeśli xi_2 zawiera sie w K(1, n+2) to H_1(n+1) zachodzi]
+
+[TODO Autor tam dopasowuje \xi_1 i v_1 tak by czesc wspolna K(1, n+2), K_2 byla
+  rowna K_1. Z poprzedniego wynika, że tak sie da zrobic, bo czesc wspolna nie
+  może być równa K_2. Sprawdzić, czemu autor tak robi, tj. czy jest to konieczne
+  i czemu to nie psuje dowodu]
+  \end{verbatim}
