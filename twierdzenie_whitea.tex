@@ -147,6 +147,8 @@ Oznaczmy $K\left(\mu_1, \mu_j\right)$ jako $K_j$.
   \label{th:hypothesis_h}
 \end{theorem}
 
+Pokazaliśmy już jak z \ref{th:hypothesis_h} wynika
+
 \begin{corollary}[Twierdzenia White'a \cite{whi88}]
   Grupa $G_p$ jest grupą wolną rzędu 2.
 \end{corollary}
@@ -157,4 +159,23 @@ $n$.
 Dla $n=1$ mamy:
 \begin{description}
   \item{$H_1$:} 
+    $K\left(\xi_1\right) \subseteq K\left(\xi_1, \xi_2\right)$, co jest
+    oczywiste.
+  \item{$H_2$:} Dla $m_1 = 0$ ta hipoteza nic nie stwierdza. W przeciwnym
+    wypadku ta hipoteza stwierdza, że $K\left(\xi_1\right) \subset K\left(\xi_1,
+    \xi_2\right)$. $\xi_2$ jest pierwiastkiem $\xi_1$ o stopniu podzielnym przez
+    $p$, wieć wykorzystując lemat \ref{lem:nontrivial_roots} i znany fakt
+    $K\left(\xi_1\right) \cong K[x]$ mamy, że $\xi_2 \not \in
+    K\left(\xi_1\right)$.
+  \item{$H_3$:} Prawdziwe, bo $K_{k+1} = K_2$.
+
 \end{description}
+
+Zatem będziemy przyjmować, że $n \geq 2$. Ciąg wywodu będzie formować wg.
+następującego schematu:
+
+\[ H(n) \Rightarrow H_1(n+1) \Rightarrow H_2(n+1) \Rightarrow H_3(n+1)
+\Rightarrow H(n+1)\]
+
+Zauważmy, że jeśli słowo $w$ zaczyna się lub kończy przesunięciem to krok
+indukcyjny jest łatwy do udowodnienia. Zaiste [TODO]
