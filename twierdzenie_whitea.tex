@@ -244,7 +244,7 @@ $K\left(\xi_1\right) \subseteq K\left(\xi_1^*\right)$.
 
 Dodatkowo zauważmy, że 
 $\xi_{n+2} \in K\left(\xi_{n+1}\right) \land \xi_{1} \in K\left(\xi_{2}\right)$.
-Zatem z \ref{eq:h_1_first} i \ref{eq:h_2_second} mamy
+Zatem z \ref{eq:h_1_first} i \ref{eq:h_1_second} mamy
 \[
   K\left(\xi_1, \xi_{n+1}\right) =
   K\left(\xi_2, \xi_{n+2}\right) =
@@ -258,5 +258,45 @@ Używając sylab możemy zauważyć, że powyższe daje nam:
   K\left(\mu_2, \mu_{k}\right)
 \]
 Jest to ciało, które ściśle zawiera $K_{k+1}$. Dodatkowo $K_{k+1} \cap K_2 =
-K_1$ i $K_k = K_{k+1}$
+K_1$ i $K_k = K_{k+1}\left(\mu_2\right)$ jest czystym rozszerzeniem $K_{k+1}$.
+$K_j = K\left(\mu_2, \mu_j\right)$ dla $2 \leq j \leq k$, gdyż $\mu_1 \in
+K\left(\mu_2\right)$ i $\mu_2 \in K_j$. Zatem możemy zauważyć, że $\left[K_k :
+K_{k+1}\right] = p$.
+
+Załóżmy teraz, że $k \geq 3$. $K_{k+1}$ jest rozszerzeniem $K_1$ zawartym w
+$K_k$, ale to rozszerzenie niekoniecznie jest czyste.
+
+Niech $\omega \neq 1$ będzie $p$-tym pierwiastkiem jedności zawartym w $K_k$.
+Możemy zdefiniować $K_{k+1}$-automorfizm $\tau$ ciała $K_k$, który przekształca
+$\mu_2$ na $\omega \mu_2$. 
+Zauważmy, że $K_2 = K\left(\mu_2\right) = K\left(\omega \mu_2\right) =
+\overline{K_2}$.
+Niech $\overline{\mu_3} = \tau(\mu_3) \in K_k$ i niech druga sylaba $s_2$ słowa
+$w$ będzie postaci $fr_l$.
+Działanie $\tau$ na $\mu_3^{p^l} = f\left(\mu_2\right)$ daje
+$\overline{\mu_3}^{p^l} = f\left(\omega\mu_2\right)$. Zatem $K_3$ i
+$\overline{K_3} = K\left(\mu_2, \overline{mu_3}\right)$ są czystymi
+rozszerzeniami stopnia $p_l$ ciała $K_2$ zawartego w $K_k$.
+
+[TODO, czemu $K_k$ jest równe $\overline{K_k}$? Jaka jest fundamentalna różnica
+między poprzednimi ciała, że takie coś zachodzi]
+
+Jeśli $l = 1$ to użycie $H_3(n)$ do podsłowa $\left(\mu_2, \mu_k\right)$ daje
+równość $\overline{K_3} = K_3$. Jeśli $l > 1$ to zauważmy, że jeśli $K_3 \cap
+\overline{K_3} = K_2$ to $K_2\left(\overline{\mu_3}^{p^{l-1}}\right)$ jest
+czystym rozszerzeniem $K\left(\mu_2\right)$ stopnia $p$ zawartym w $K_k$, ale
+nie w $K_3$. Sprzeczność. Jeśli $K_3 \cap \overline{K_3} \supset K_2$ to
+wystarczy odpowiednio dostosować $\mu_2$ i $l$ jak poprzednio.
+
+Teraz z lematu TODO równość $K_2\left(\mu_3\right) =
+K_2\left(\overline{\mu_3}\right)$ implikuje, że dla pewnego $t$ ($p \not | t$)
+mamy $\mu_3\overline{\mu_3}^t \in K\left(\mu_2\right)$. Podnosząc to do
+$p^l$-tej potęgi i zastępując $\mu_2$ przez $x$ otrzymamy równanie
+\[ f(x)f^t(\omega x) = h^{p^l}(x)\]
+
+To jest niemożliwe z lematu \ref{lem:main_polynomial_lemma}. Zatem $k = 2$ i $w
+= r_{m_1}f$, gdzie $f$ jest słowem wielomianowym postaci $f_0^{p^l}(x)$, gdzie
+$v_{n+1} = e_l$. Mamy zatem $K_3 = K_1$ [TODO czemu?] i  w takim razie $\mu_3 =
+f\left(\mu_2\right) \in K_1 = K\left(\mu_2^p\right)$. To prowadzi do $f_0(x) =
+g\left(x^p\right)$ i sprzeczności.
 
