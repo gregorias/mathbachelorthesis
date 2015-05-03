@@ -24,7 +24,7 @@ generuje $F$.
   $\iota$ jest iniekcją.
 \end{corollary}
 \begin{proof}
-  Jeśli $|S| < 2$ to injektywność trywialnie zachodzi. W przeciwnym
+  Jeśli $|S| < 2$ to różnowartościowość trywialnie zachodzi. W przeciwnym
   wypadku niech $a, b \in S, a \neq b$. Niech $\rho: S \rightarrow \Z_2, \rho(a)
   = 0, \rho(b) = 1$. Jeśli $\iota(a) = \iota(b)$ to $\phi(\iota(a)) =
   \phi(\iota(b))$, ale $\rho(a) \neq \rho(b)$. Sprzeczność.
@@ -42,7 +42,7 @@ generuje $F$.
   możliwe homomorfizmy $\psi, \psi': F \rightarrow F$: $\psi = id$ i
   $\psi' = \phi$.
 
-  Jeśli weżmiemy $F$ za $G$ i użyjemy uniwersalnej własności to z
+  Jeśli weźmiemy $F$ za $G$ i użyjemy uniwersalnej własności to z
   jednoznaczności $\phi$ otrzymamy, że $\psi = \psi'$, czyli $\phi = id$. Zatem
   $F = \langle \iota(S)\rangle$.
 \end{proof}
@@ -64,7 +64,7 @@ To powinno być możliwe dla każdej grupy $G$ dlatego potrzebujemy słów koduj
 elementy $s_i$.
 
 \begin{defin}[Zbiór słów zredukowanych]
-  Niech $S^{-1}$ bedzie zbiorem elementów odwrotnych do $S$ takim, że $S \cap
+  Niech $S^{-1}$ będzie zbiorem elementów odwrotnych do $S$ takim, że $S \cap
   S^{-1} = \emptyset$ i istnieje bijekcja między $S$ i $S^{-1}$. Załóżmy
   dodatkowo, że $1 \not \in S \cup S^{-1}$ i $1^{-1} = 1$.  Zbiorem słów
   zredukowanych $F(S)$ jest zbiór nieskończonych ciągów postaci:
@@ -89,7 +89,7 @@ s_n^{\epsilon_n}, 1, 1, \ldots)$, gdzie $\epsilon_i \in \{-1, 1\}$ jako:
 $s_1^{\epsilon_1}\ldots s_n^{\epsilon_n}$
 
 \begin{defin}[Grupa wolna generowana przez zbiór]
-  Grupwą wolną generowaną przez zbiór $S$ nazywamy zbiór słów zredyukowanych
+  Grupą wolną generowaną przez zbiór $S$ nazywamy zbiór słów zredukowanych
   $F(S)$ gdzie operacją grupową $\cdot$ jest konkatenacja z eliminacją
   redukujących się symboli, tj. ciągów postaci $ss^{-1}$. Formalnie niech:
   $s = s_1^{\epsilon_1}\ldots s_n^{\epsilon_n}, p = p_1^{\epsilon_1}\ldots
@@ -105,13 +105,13 @@ $s_1^{\epsilon_1}\ldots s_n^{\epsilon_n}$
   Wówczas $s \cdot p = s_1^{\epsilon_1}\ldots s_{n -
   k}^{\epsilon_{n-k}}p_{k+1}^{\epsilon_{k+1}}\ldots p_{m}^{\epsilon_m}$
 
-  Injekcję $\iota$ z definicji \ref{def:universal_property} definiujemy w
+  Iniekcję $\iota$ z definicji \ref{def:universal_property} definiujemy w
   następujący sposób: $\iota: S \rightarrow F(S), \iota(s) = s$.
   \label{def:generated_free_group}
 \end{defin}
 
 \begin{theorem}
-  Grupa $F(S)$ z defnicji \ref{def:generated_free_group} jest rzeczywiście grupą
+  Grupa $F(S)$ z definicji \ref{def:generated_free_group} jest rzeczywiście grupą
   i dodatkowo jest wolną grupą generowaną przez $S$.
 \end{theorem}
 \begin{proof}
@@ -155,7 +155,7 @@ Grupa słów zredukowanych jest utożsamiania z pojęciem grupy wolnej nad $S$ z
 powodu następującego twierdzenia.
 
 \begin{theorem}
-  Jeśli $F, F'$ są grupamy wolnymi nad $S$ to $F \cong F'$.
+  Jeśli $F, F'$ są grupami wolnymi nad $S$ to $F \cong F'$.
 \end{theorem}
 \begin{proof}
   Z definicji \ref{def:universal_property} istnieją jednoznaczne homomorfizmy
