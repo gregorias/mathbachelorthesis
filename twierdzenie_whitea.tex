@@ -196,8 +196,8 @@ lub $r_m$ dla pewnego $m \geq 1$.
 \section{Dowód $H_1(n+1)$}
 Przyjmujemy notację i założenia z poprzednich sekcji oraz hipotezę $H(n)$.
 Będziemy też używać notacji typu $\left(\xi_i, \xi_j\right)$ do oznaczenia
-podsłowa $v_i\ldots w_{j-1}$ słowa $w$ którego działanie przekształca $\xi_i$ na
-$\xi_j$. Dokonamy teraz dodatkowe obserwacje i poprawki.
+podsłowa $v_i\ldots v_{j-1}$ słowa $w$ którego działanie przekształca $\xi_i$ na
+$\xi_j$. Dokonamy teraz dodatkowych obserwacji i poprawek.
 
 Z $H_1(n)$ zaaplikowanego do $\left(\xi_1, \xi_{n+1}\right)$ oraz $\left(\xi_2,
 \xi_{n+2}\right)$ mamy
@@ -219,15 +219,44 @@ Z $H_1(n)$ zaaplikowanego do $\left(\xi_1, \xi_{n+1}\right)$ oraz $\left(\xi_2,
 \end{equation}
 
 Załóżmy, że $H_1(n+1)$ nie zachodzi, tj. $K\left(\xi_1, \xi_{n+2}\right)$ nie
-zawiera $K\left(\xi_1, \xi_{n+1}\right)$. Wówczas $v_{n+1} = e_m$ i $m_k = 0$.
-  $\xi_{n+2} = v_{n+1}\left(\xi_{n+1}\right) \in K\left(\xi_{n+1}\right)$, czyli
-  $K\left(\xi_1, \xi_{n+2}\right) \subset K\left(\xi_1, \xi_{n+1}\right)$.
+zawiera się w $K\left(\xi_1, \xi_{n+1}\right)$. Wówczas $v_{n+1} = e_m$ i $m_k =
+0$. 
+Naturalnie $\xi_{n+2} = v_{n+1}\left(\xi_{n+1}\right) \in
+K\left(\xi_{n+1}\right)$, czyli $K\left(\xi_1, \xi_{n+2}\right) \subset
+K\left(\xi_1, \xi_{n+1}\right)$.
+Zauważmy, że jeśli $\xi_2 \in K\left(\xi_1\right)$ to z ostatniego zawierania w
+\ref{eq:h_1_second} mamy:
+\[ 
+  K\left(\xi_1, \xi_{n+1}\right) =
+  K\left(\xi_2, \xi_{n+1}\right)\left(\xi_1\right) \subseteq
+  K\left(\xi_2, \xi_{n+2}\right)\left(\xi_1\right) =
+K\left(\xi_1, \xi_{n+2}\right)\]
+Zatem musimy założyć, że $v_1 = r_{m_1}$.
 
-\begin{verbatim}
-[TODO Napisać, że jeśli xi_2 zawiera sie w K(1, n+2) to H_1(n+1) zachodzi]
+Będziemy chcieli, aby zachodziło $K\left(\xi_1, \xi_{n+2}\right) \cap
+K\left(\xi_1, \xi_2\right) = K\left(\xi_1\right)$. W tym celu podstawiamy pod
+$\xi_1 = \xi_2^{p^{m_1-1}}$ i $v_1 = r_1$. To podstawienie daje nam tę własność,
+gdyż $\xi_2 \not \in K\left(\xi_2^{p^{m_1}}\right)$ i stopień rozszerzenia
+$\left[K_2 : K_1\right] = p$. To podstawienie nie osłabia nam dowodzonej
+własności, gdyż jeśli oznaczymy podstawione $\xi_1$ jako $\xi_1^*$ to
+$K\left(\xi_1\right) \subseteq K\left(\xi_1^*\right)$.
+[TODO czemu tak chcemy?]
 
-[TODO Autor tam dopasowuje \xi_1 i v_1 tak by czesc wspolna K(1, n+2), K_2 byla
-  rowna K_1. Z poprzedniego wynika, że tak sie da zrobic, bo czesc wspolna nie
-  może być równa K_2. Sprawdzić, czemu autor tak robi, tj. czy jest to konieczne
-  i czemu to nie psuje dowodu]
-  \end{verbatim}
+Dodatkowo zauważmy, że 
+$\xi_{n+2} \in K\left(\xi_{n+1}\right) \land \xi_{1} \in K\left(\xi_{2}\right)$.
+Zatem z \ref{eq:h_1_first} i \ref{eq:h_2_second} mamy
+\[
+  K\left(\xi_1, \xi_{n+1}\right) =
+  K\left(\xi_2, \xi_{n+2}\right) =
+  K\left(\xi_2, \xi_{n+1}\right)
+\]
+
+Używając sylab możemy zauważyć, że powyższe daje nam:
+\[
+  K\left(\mu_1, \mu_{k}\right) =
+  K\left(\mu_2, \mu_{k+1}\right) =
+  K\left(\mu_2, \mu_{k}\right)
+\]
+Jest to ciało, które ściśle zawiera $K_{k+1}$. Dodatkowo $K_{k+1} \cap K_2 =
+K_1$ i $K_k = K_{k+1}$
+
