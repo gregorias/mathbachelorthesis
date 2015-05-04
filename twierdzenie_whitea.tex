@@ -300,3 +300,34 @@ $v_{n+1} = e_l$. Mamy zatem $K_3 = K_1$ [TODO czemu?] i  w takim razie $\mu_3 =
 f\left(\mu_2\right) \in K_1 = K\left(\mu_2^p\right)$. To prowadzi do $f_0(x) =
 g\left(x^p\right)$ i sprzeczności.
 
+\section{Dowód $H_2(n+1)$}
+Zakładamy $H_1(n+1), H(n)$. Będziemy używać założenie indukcyjne na odwrotności
+podsłowa $w$. 
+
+Mając $H_2(n)$ musimy udowodnić, że $K_k \subset K_{k+1}$, gdy $m_k \geq 1$.
+Załóżmy, że $H_2(n+1)$ nie zachodzi, czyli $K_k = K_{k+1}$. To oznacza, że
+$\mu_{k+1} \in K_k$, zatem naturalnie $\mu_{k+1}^{p^{m_k -1}} \in K_k$. Możemy
+więc zastąpić $v_n = r_{m_k}$ przez $r_1$ a przez to poprzednie $\mu_{k+1}$
+staje się równe $\mu_{k+1}^{p^{m_k - 1}}$.
+Jeśli $\mu_{k+1} \in K\left(\xi_2, \mu_k\right)$ to $K\left(\xi_2, \mu_k\right)
+= K\left(\xi_2, \mu_{k+1}\right)$ co zaprzecza $H_2(n)$ zaaplikowanej do
+$\left(\xi_2, \xi_{n+2}\right)$. Zatem $\mu_{k+1} \not \in K\left(\xi_2,
+\mu_k\right)$ i $w$ musi zaczynać się od potęgi $v_1 = e_q$.
+
+Z hipotezy $H_1(n+1)$ mamy
+\[ 
+  K\left(\xi_2, \mu_k\right) \left(\mu_{k+1}\right)
+  =
+  K\left(\xi_2, \mu_{k+1}\right)
+  \subseteq
+  K\left(\xi_1, \mu_{k+1}\right)
+  =
+  K\left(\xi_1, \mu_{k}\right)
+  =
+  K\left(\xi_2, \mu_{k}\right)\left(\xi_1\right)
+\]
+
+\section{Dowód $H_3(n+1)$}
+Niech $F$ będzie czystym rozszerzeniem stopnia $p$ ciała $K_1$. Niech $F
+\subseteq K_{k+1}$ i $F \not \subseteq K_2$.
+

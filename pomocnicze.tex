@@ -72,6 +72,15 @@ pierwiastka to $\prod_{i=1}^s p^{k_{i_s}}$.
   poprzez włączenie $f^p(\omega x)$ do $h^p(x)$. 
 
   [TODO nie rozumiem jak] Dodatkowo z \ref{eq:pol_lemma} mamy
+  Niech $E$ będzie podciałem ciała $\C$ o charakterystyce $0$. Niech $p$ będzie
+  nieparzystą liczbą pierwszą i pierwotny pierwiastek jedynki $p$-tego stopnia
+  należy do $E$. Niech $m, n \in \N$ takie, że $1 \leq m \leq n$ i $a, b \in E$
+  takie, że $\sqrt[p]{a} \not \in E \land \sqrt[p]{b} \not \in E$.  Jeśli $E
+  \left(\sqrt[p^m]{a}\right)  \subseteq E\left(\sqrt[p^n]{b}\right)$ to te dwa
+  rozszerzenia są równe i $ab^t = c^{p^m}$ dla pewnego $c \in E$ i liczby
+  całkowitej $t$ niepodzielnej przez $p$.
+  \label{lem:associated_extensions}
+
   \begin{equation}
     f(x)f^t(\omega x) = g\left(x^p\right)h^p(x)
     \label{eq:pol_lemma_right}
@@ -87,11 +96,28 @@ pierwiastka to $\prod_{i=1}^s p^{k_{i_s}}$.
   jest jednokrotnym pierwiastkiem $f$. Wówczas
 \end{proof}
 
+\section{Lemat o związku między prostymi rozszerzeniami}
+\begin{lemma}
+  Niech $E$ będzie podciałem ciała $\C$. Niech $p$ będzie nieparzystą liczbą
+  pierwszą i pierwotny pierwiastek jedynki $p$-tego stopnia należy do $E$. Niech
+  $m, n \in \N$ takie, że $1 \leq m \leq n$ i $a, b \in E$ takie, że $x^p - a,
+  x^p - b$ są nierozkładalne w $E$. Jeśli dla pewnych rozwiązań $x^{p^m} - a,
+  x^{p^n} -b$ mamy $E\left(\sqrt[p^m]{a}\right)  \subseteq
+  E\left(\sqrt[p^n]{b}\right)$ to te dwa rozszerzenia są równe i $ab^t =
+  c^{p^m}$ dla pewnego $c \in E$ i liczby całkowitej $t$ niepodzielnej przez
+  $p$. \label{lem:associated_extensions}
+\end{lemma}
+\begin{proof}
+  Jednym z podstaowych faktów teorii ciał jest
+  $\left[E\left(\sqrt[p^m]{a}\right):E\right] = p^m$ 
+  \cite[Twierdzenie 13.1.4]{dum04}.
+  Bardziej ogólnie, jeśli $A \in E$ i $l$ jest największą liczbą całkowitą
+  spełniającą $0 \leq l \leq n$, że $\sqrt[p^l]{A} \in E$ to stopień
+  rozszerzenia wynosi $p^{n-l}$.
 
-
-
-
-
-
-
+  Lemat dowiedziemy przez indukcję po $n$. Dla $n=1$ mamy 
+  $E\left(\sqrt[p]{a}\right) \subseteq
+  E\left(\sqrt[p]{b}\right)$. Oba rozszerzenia są tego samego stopnia
+  pierwszego zatem są sobie równe.
+\end{proof}
 
