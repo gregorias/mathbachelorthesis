@@ -327,6 +327,51 @@ Z hipotezy $H_1(n+1)$ mamy
   K\left(\xi_2, \mu_{k}\right)\left(\xi_1\right)
 \]
 
+Poprzez tą samą metodę co w poprzedniej sekcji dostowojemy tak $\xi_1$ aby móc
+założyć $q = 1$. Wówczas dalej będzie $\xi_1 \not \in K\left(\xi_2,
+\mu_k\right)$, ale za to uzyskamy równość 
+$K\left(\xi_2, \mu_{k+1}\right) 
+= K\left(\xi_1, \mu_k\right) 
+= K\left(\mu_1, \mu_{k+1}\right)$. Wynika to z tego, iż 
+$
+K\left(\xi_2, \mu_{k}\right) \left(\mu_{k+1}\right),
+K\left(\xi_2, \mu_{k}\right) \left(\xi_{1}\right)$ oba są rozszerzeniami
+$p$-tego stopnia i pierwsze ciało zawiera się w drugim.
+
+Niech końcówka słowa $w$ ma postać
+\[ w = \ldots e_mg^{-1}r_lfr_1, m,l \geq 1\]
+
+[TODO czemu $e_m$? to wcale nie jest konieczne]
+
+$f, g$ są słowami wielomianowymi zaczynającymi się od translacji i $g^{-1}$
+oznacza odwrotność $g$. Niech $u = \left(s_1 \ldots s_{k-1}\right)^{-1}$. Jest
+jasne, że $u$ ma tę samą długość co $s_1\ldots s_{k-1}$ mniejszą od $n$ i kończy
+się $r_1$. W szczególności $u\left(\mu_k\right) = \xi_1$ zatem $u = \left(\mu_k,
+\xi_1\right)$. Oznaczmy sobie ciąg zmiennych powstałych przez kolejne aplikacje
+sylab z $u$ jako $\lambda_1 = \mu_k, \lambda_2 =
+s_{k-1}^{-1}\left(\lambda_1\right), \ldots$.
+
+Niech $F = K \left(\mu_k, \mu_{k+1}\right)$. Mamy, że 
+$\mu_{k+1}^p = f\left(\mu_k\right)$ zatem $F$ jest czystym rozszerzeniem
+$K\left(\lambda_1 \right)$ stopnia $p$ zawartym w $K \left( \mu_k, \xi_1
+\right)$, ale nie $K \left(\mu, \lambda_2 \right)$. 
+Aplikacja $H_3(n)$ do $u$ daje nam, że $F \subseteq K \left( \lambda_1,
+\lambda_2 \right)$.
+
+Załóżmy, że $u$ składa się z więcej niż jednej sylaby. Aplikacja $H_1(n)$ do $u$
+daje nam 
+$K \left( \lambda_1, \lambda_2 \right) \subseteq K \left( \lambda_1, \xi_2
+\right) = K \left( \mu_k, \xi_2 \right)$, które dają $\mu_{k+1} \in F \subseteq
+K \left( \xi_2, \mu_k \right)$.
+
+Zatem $u$ jest monosylabowe i $\xi_1^p \in K \left( \mu_k\right)$. Zatem 
+$K \left( \mu_k \right) \left(\xi_1 \right) = K \left(\mu_k \right)
+\left(\mu_{k+1} \right) = F$. Zatem całe słowo $w$ jest postaci
+\[w = e_1 g^{-1}r_lfr_1\]
+Dla pewnego $t$ względnie pierwszego z $p$ mamy $\mu_{k+1} \mu_1^t \in K \left(
+\mu_k \right)$. 
+
+
 \section{Dowód $H_3(n+1)$}
 Niech $F$ będzie czystym rozszerzeniem stopnia $p$ ciała $K_1$. Niech $F
 \subseteq K_{k+1}$ i $F \not \subseteq K_2$.
