@@ -34,22 +34,25 @@ Sprzeczność.
 \begin{lemma}
   Każdy pierwiastek słowa wielomianowego $f$ jest pierwiastkiem o krotności
   będącej potęgą $p$.
+  \label{lem:multiplicity_lemma}
 \end{lemma}
 
 \begin{proof}
 Definiujemy ciąg słów wielomianowych $f_1, f_2, \ldots, f_{l+1}$ jako ciąg
-kolejnych aplikacji funkcji postaci $(x+a_i)^{p^{k_i}}$ z postaci
-\ref{eq:gp_element}. Tj. $f_1(x) = \left(x + a_1\right)^{p^{k_1}},
-f_2(x) = \left(f_1(x) + a_2\right)^{p^{k_2}}, \ldots, f_{l+1} = f$.
+kolejnych aplikacji funkcji postaci $(x+a_i)$ ze wzoru
+\ref{eq:gp_element}. 
+To jest
+\[f_1(x) = \left(x + a_1\right), f_2(x) = \left(f_1^{q_1}(x) +
+a_2\right), \ldots, f_{l+1}(x) = f_l^{q_l}(x) = f(x)\]
 
 Różniczkując otrzymujemy:
-\[f' = \prod_{i=1}^l p^{k_i} f_i^{p^{k_i - 1}}\]
+\[f' = \prod_{i=1}^l q_i f_i^{q_i - 1}\]
 
 Zatem każdy wielokrotny pierwiastek $f$ jest także pierwiastkiem co najmniej
 jednego z wielomianów $f_j$. Niech $f_{j_1}, \ldots, f_{j_s}$, gdzie $1 \leq j_1
-\leq \ldots \leq j_s \leq l$ będą wszystkimi wyrazami z ciągu, dla których dany
+< \ldots < j_s \leq l$ będą wszystkimi wyrazami z ciągu, dla których dany
 pierwiastek $f$ jest również i ich pierwiastkiem. Wówczas stopień tego
-pierwiastka to $\prod_{i=1}^s p^{k_{i_s}}$.
+pierwiastka to $\prod_{i=1}^s q_{j_i}$.
 \end{proof}
 
 \begin{lemma}
@@ -58,56 +61,128 @@ pierwiastka to $\prod_{i=1}^s p^{k_{i_s}}$.
   Wówczas identyczność postaci
   \begin{equation}
     f(x)f^t(\omega x)g\left(x^p\right) = h^p(x)
-    \label{eq:pol_lemma}
+    \label{eq:polynomial_lemma}
   \end{equation}
 
-  gdzie $t \in \Z$ a $g, h \in \overline{Q}[x]$ jest niemożliwa.
+  gdzie $t \in \Z$, a $g, h \in \overline{Q}[x]$ jest niemożliwa.
   \label{lem:main_polynomial_lemma}
 \end{lemma}
 
 \begin{proof}
-  [TODO Czy w ciele overlineQ pierwiastki p-tego stopnia są różne?]
+  Jeśli \ref{eq:polynomial_lemma} zachodzi to możemy założyć, że $0 \leq t \leq p - 1$
+  poprzez włączenie $f^p(\omega x)$ do $h^p(x)$.
 
-  Jeśli \ref{eq:pol_lemma} zachodzi to możemy założyć, że $0 \leq t \leq p - 1$
-  poprzez włączenie $f^p(\omega x)$ do $h^p(x)$. 
-
-  [TODO nie rozumiem jak] Dodatkowo z \ref{eq:pol_lemma} mamy
-  Niech $E$ będzie podciałem ciała $\C$ o charakterystyce $0$. Niech $p$ będzie
-  nieparzystą liczbą pierwszą i pierwotny pierwiastek jedynki $p$-tego stopnia
-  należy do $E$. Niech $m, n \in \N$ takie, że $1 \leq m \leq n$ i $a, b \in E$
-  takie, że $\sqrt[p]{a} \not \in E \land \sqrt[p]{b} \not \in E$.  Jeśli $E
-  \left(\sqrt[p^m]{a}\right)  \subseteq E\left(\sqrt[p^n]{b}\right)$ to te dwa
-  rozszerzenia są równe i $ab^t = c^{p^m}$ dla pewnego $c \in E$ i liczby
-  całkowitej $t$ niepodzielnej przez $p$.
-  \label{lem:associated_extensions}
-
+  Dodatkowo istnieją $g'(x), h'(x) \in \overline{\Q}[x]$ takie, że
   \begin{equation}
-    f(x)f^t(\omega x) = g\left(x^p\right)h^p(x)
-    \label{eq:pol_lemma_right}
+    f(x) f^t(\omega x) = g' \left( x^p \right) h'^p(x)
+    \label{eq:polynomial_lemma_right}
   \end{equation}
+  Tak jest, gdyż zauważmy, że
+  \[ f(x) f^t(\omega x) = \frac{h^p(x)}{g \left( x^p \right)} \]
+  Po lewej stronie równania mamy wielomian, zatem $g \left( x^p \right) |
+  h^p(x)$. Wielomiany $g', h'$ można skonstruować indukcyjnie następującą
+  metodą. Niech dany będzie wielomian postaci 
+  $\frac{n_l \left( x^p \right) m^p(x)}{n_m \left( x^p \right)}$, gdzie $n_l,
+  n_m, m$ to wielomiany w $\overline{\Q}$. Zauważmy, że $x^p - a$ ma wszystkie
+  $p$ pierwiastków różne i dla różnych $a$ te wielomiany nie mają wspólnych
+  pierwiastków. Jeśli $n_m \equiv 1$ to nic nie robimy, bo wtedy $g' = n_l, h' =
+  m$.
+  Jeśli $\left(x^p - a \right) | n_m \left(x^p\right)$ i $\left(x^p - a \right)
+  | n_l \left(x^p\right)$ to bierzemy 
+  $n_l' = \frac{n_l(x)}{x^p - a}, n_m' = \frac{n_m(x)}{x^p - a}$ i w kolejnym
+  kroku podstawiamy te skrócone wielomiany.
+  W przeciwnym wypadku 
+  $\left(x^p - a \right) | n_m \left(x^p \right)$ i 
+  $\left(x^p - a \right) | h^p \left(x \right)$. Wszystkie pierwiastki
+  $\left(x^p - a \right)$ są różne zatem $\left(x^p - a \right) | h(x)$.
+  Bierzemy zatem: 
+  $n_l' = n_l(x)\left(x^p - a \right)^{p-1}, n_m' = \frac{n_m(x)}{x^p -
+  a}, h' = \frac{h(x)}{x^p - a}$.
+  W każdym kroku skracamy mianownik z kolejnych dzielników zatem w końcu
+  uzyskamy żądaną postać $g'\left(x^p \right) h'^p(x)$.
 
   Niech $\alpha$ będzie jednokrotnym pierwiastkiem $f$. Wówczas każdy
   pierwiastek $\beta$ wielomianu $\left(x + a_1\right)^{q_1} - \left(\alpha +
   a_1\right)^{q_1}$ jest również jednokrotnym pierwiastkiem $f$. Tak jest, bo
   wówczas $f_1(\beta) = f_1(\alpha)$, a $f_1(\alpha)$ jest jednokrotnym
-  pierwiastkiem $f_2f_3 \ldots f_{l}$.
+  pierwiastkiem $f \circ f_1^{-1}$.
 
-  Niech, więc $f^*(x)$ będzie iloczynem czynników $(x-\alpha)$, gdzie $\alpha$
-  jest jednokrotnym pierwiastkiem $f$. Wówczas
+  Niech $f^*(x)$ będzie iloczynem czynników $(x-\alpha)$, gdzie $\alpha$ jest
+  jednokrotnym pierwiastkiem $f$. Wówczas $f^*(x) = f_0 \left( \left(x + a_1
+  \right)^{q_1} \right)$ [TODO czemu wywalanie pierwiastków wielokrotnych nie
+  psuje nam tego?] dla pewnego wielomianiu $f_0$.
+
+  Jeśli $t=0$ to z lematu \ref{lem:multiplicity_lemma} dla pewnego wielomianu
+  $g_0$
+  \begin{equation}
+   f^*(x) = f_0 \left(\left(x + a_1 \right)^{q_1} \right) = g_0 \left( x^p
+  \right)
+  \label{eq:polynomial_lemma_only_g}
+\end{equation}
+  Jeśli oznaczymy $N = \deg f^*$ to $f_0 \left(\left(x + a_1 \right)^{q_1}
+  \right)$ musi mieć niezerowy współczynnik przy $x^{N-1}$, ale prawa strona z
+  kolei nie może mięć niezerowego współczynnika przy $x^{N-1}$, bo $p$ wyznacza
+  nam różnicę stopni między kolejnymi jednomianami. Zatem $t \neq 0$.
+
+  W \ref{eq:polynomial_lemma} możemy zastąpić $f$ przez $f^*$ poprzez włączenie
+  wielokrotnych pierwiastków pod $h'^p(x)$. Zauważmy, że po takim zastąpieniu
+  mamy $h' \equiv 1$, gdyż nie mamy już $p$-krotnych pierwiastków po lewej
+  stronie identyczności. Jeśli $\alpha$ jest pierwiastkiem $f^*$ to oznaczmy
+  krotność $\omega^i\alpha$, gdzie $0 \leq i \leq p - 1$, jako $m_i$. Mamy
+  $\forall_{1 \leq i \leq p - 1} \, m_i \in \{0, 1\}, m_0 = 1$.  Każda liczba
+  postaci $\omega^i\alpha$ ma tę samą krotność jako pierwiastek $g' \left( x^p
+  \right)$. Zatem
+  \begin{align*}
+    m_0 + tm_{p-1} &\equiv m_1 + tm_0 \pmod{p}\\
+    m_1 + tm_{0} &\equiv m_2 + tm_1 \pmod{p}\\
+                 &\mathrel{\makebox[\widthof{=}]{\vdots}}\\
+    m_{p-2} + tm_{p-3} &\equiv m_{p-1} + tm_{p-2} \pmod{p}\\
+  \end{align*}
+
+  Zatem $\sum_{i=0}^{p-1} m_i \equiv 0 \pmod{p}$ lub $t \equiv p-1 \pmod{p}$. Z
+  obu wynika, że $\forall_{0 \leq i \leq p-1} m_i = 1$. Wówczas $f(x) = f(\omega
+  x)$, czyli $\left( f^*(x) \right)^t = g_0 \left( x^p \right)$ co jest
+  niemożliwe używając analogicznego argumentu co przy
+  \ref{eq:polynomial_lemma_only_g}.
+
+
 \end{proof}
 
 \section{Lemat o związku między prostymi rozszerzeniami}
 \begin{lemma}
-  Niech $E$ będzie podciałem ciała $\C$. Niech $p$ będzie nieparzystą liczbą
-  pierwszą i pierwotny pierwiastek jedynki $p$-tego stopnia należy do $E$. Niech
-  $m, n \in \N$ takie, że $1 \leq m \leq n$ i $a, b \in E$ takie, że $x^p - a,
-  x^p - b$ są nierozkładalne w $E$. Jeśli dla pewnych rozwiązań $x^{p^m} - a,
-  x^{p^n} -b$ mamy $E\left(\sqrt[p^m]{a}\right)  \subseteq
-  E\left(\sqrt[p^n]{b}\right)$ to te dwa rozszerzenia są równe i $ab^t =
+  Niech $E$ będzie podciałem ciała $\C$ i $\overline{\Q} \subseteq E$.
+  Niech $p$ będzie nieparzystą liczbą pierwszą.
+  Niech $m, n \in \N$ takie, że $1 \leq m \leq n$ i $a, b \in E$ takie, że $x^p
+  - a, x^p - b$ są nierozkładalne w $E$.
+  Jeśli dla pewnych rozwiązań $x^{p^m} - a, x^{p^n} -b$ mamy
+  $E\left(\sqrt[p^m]{a}\right) = E\left(\sqrt[p^n]{b}\right)$ to $ab^t =
   c^{p^m}$ dla pewnego $c \in E$ i liczby całkowitej $t$ niepodzielnej przez
-  $p$. \label{lem:associated_extensions}
+  $p$.
+  \label{lem:associated_extensions}
 \end{lemma}
 \begin{proof}
+  \begin{verbatim}
+    Dummit 13.1.4
+      Jeśli p(x) w F[x] nierozkładalny stopnia n. To niech K = F[x]/p(x),
+      wówczas K:F = n
+
+    Dummit 13.1.6
+      Jeśli alpha \not \in F, ale p(alpha) = 0 i p(x) nierozkladalny w F to
+        F(alpha) = F[x]/p(x)
+
+    Roman 14.1.1
+      Jeśli p pierwsza to nastepujace sa rownowazne:
+        u nienalezy do F^p
+        f(x) = x^p -u nie ma pierwiastka w F
+        f(x) = x^p -u jest nierozkładalne w F
+
+    Roman 14.1.2
+
+    Roman 14.2.8
+      Jeśli x^n - a, x^n - b nierozkładalne nad F i $F$ zawiera pierwotny
+       n-ty pierwiastek jedności. Wówczas $x^n - a, x^n - b$ mają te same ciało
+       rozkładu wtw. b = c^na^r dla c w F i r całkowitego, (n, r) = 1.
+  \end{verbatim} 
   Jednym z podstaowych faktów teorii ciał jest
   $\left[E\left(\sqrt[p^m]{a}\right):E\right] = p^m$ 
   \cite[Twierdzenie 13.1.4]{dum04}.
@@ -120,4 +195,5 @@ pierwiastka to $\prod_{i=1}^s p^{k_{i_s}}$.
   E\left(\sqrt[p]{b}\right)$. Oba rozszerzenia są tego samego stopnia
   pierwszego zatem są sobie równe.
 \end{proof}
+
 
