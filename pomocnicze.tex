@@ -148,8 +148,30 @@ pierwiastka to $\prod_{i=1}^s q_{j_i}$.
 
 \end{proof}
 
-\section{Lemat o związku między prostymi rozszerzeniami}
-\begin{lemma}
+\section{Lematy i twierdzenia o rozszerzeniach ciał}
+\begin{theorem}
+  Niech $F$ będzie ciałem a $p$ liczbą pierwszą. Następujące fakty są
+  równoważne.
+
+  \begin{itemize}
+    \item $x^p - u$ nie ma pierwiastka w $F$.
+    \item $x^p - u$ jest nierozkładalne w $F$.
+  \end{itemize}
+  \label{th:14_1_1}
+\end{theorem}
+  Wynika wprost z \cite[Twierdzenie 14.1.1]{rom06}
+
+\begin{theorem}
+  Niech $F$ to ciało i $u \in F$.
+
+  Jeśli $p$ jest nieparzystą liczbą pierwszą i $p \in \N$ to wielomian 
+  $x^{p^m} - u$ jest nierozkładalny w ciele $F$, jeśli
+  $x^p - u$ nie ma pierwiastka w ciele $F$.
+  \label{th:14_1_2}
+\end{theorem}
+
+  Wynika wprost z \cite[Twierdzenie 14.1.2]{rom06}
+\begin{lemma}{Lemat o związku między prostymi rozszerzeniami}
   Niech $E$ będzie podciałem ciała $\C$ i $\overline{\Q} \subseteq E$.
   Niech $p$ będzie nieparzystą liczbą pierwszą.
   Niech $m, n \in \N$ takie, że $1 \leq m \leq n$ i $a, b \in E$ takie, że $x^p
@@ -161,6 +183,21 @@ pierwiastka to $\prod_{i=1}^s q_{j_i}$.
   \label{lem:associated_extensions}
 \end{lemma}
 \begin{proof}
+  Z \cite[Twierdzenie 14.2.8]{rom06} jeśli $x^{p^m} - a$ i $x^{p^n} - b$ są
+  nierozkładalne to mają to samo rozszerzenie rozdzielcze nad $E$ wtedy i tylko
+  wtedy, gdy istnieje $c \in E$ i $t \in \Z$ niepodzielne przez $p$ takie, że
+  $a = c^nb^t$.  
+  Jako, iż $\overline{\Q} \subseteq E$ to jeśli $F$ rozszerzenie $E$ i $\alpha
+  \in F$  jest pierwiastkiem $x^{p^m} -a$ to jeśli $\omega$ jest pierwotnym
+  pierwiastkiem jedynki stopnia $p^m$ to $x - \omega^i \alpha, 0 \leq i \leq p^m
+  - 1$ są wszystkimi czynnikami $x^{p^m} - a$.
+  Wystarczy, więc pokazać, że $x^{p^m} - a$ i $x^{p^n} - b$ są nierozkładalne
+  aby otrzemać tezę lematu.
+
+  Nierozkładalność obu wielomianów wynika z twierdzeń \ref{th:14_1_1},
+  \ref{th:14_1_2} i tego, że $x^p -a, x^p - b$ są nierozkładalne w $E$.
+\end{proof}
+
   \begin{verbatim}
     Dummit 13.1.4
       Jeśli p(x) w F[x] nierozkładalny stopnia n. To niech K = F[x]/p(x),
@@ -169,31 +206,11 @@ pierwiastka to $\prod_{i=1}^s q_{j_i}$.
     Dummit 13.1.6
       Jeśli alpha \not \in F, ale p(alpha) = 0 i p(x) nierozkladalny w F to
         F(alpha) = F[x]/p(x)
-
-    Roman 14.1.1
-      Jeśli p pierwsza to nastepujace sa rownowazne:
-        u nienalezy do F^p
-        f(x) = x^p -u nie ma pierwiastka w F
-        f(x) = x^p -u jest nierozkładalne w F
-
-    Roman 14.1.2
-
-    Roman 14.2.8
-      Jeśli x^n - a, x^n - b nierozkładalne nad F i $F$ zawiera pierwotny
-       n-ty pierwiastek jedności. Wówczas $x^n - a, x^n - b$ mają te same ciało
-       rozkładu wtw. b = c^na^r dla c w F i r całkowitego, (n, r) = 1.
   \end{verbatim} 
+
   Jednym z podstaowych faktów teorii ciał jest
   $\left[E\left(\sqrt[p^m]{a}\right):E\right] = p^m$ 
   \cite[Twierdzenie 13.1.4]{dum04}.
   Bardziej ogólnie, jeśli $A \in E$ i $l$ jest największą liczbą całkowitą
   spełniającą $0 \leq l \leq n$, że $\sqrt[p^l]{A} \in E$ to stopień
   rozszerzenia wynosi $p^{n-l}$.
-
-  Lemat dowiedziemy przez indukcję po $n$. Dla $n=1$ mamy 
-  $E\left(\sqrt[p]{a}\right) \subseteq
-  E\left(\sqrt[p]{b}\right)$. Oba rozszerzenia są tego samego stopnia
-  pierwszego zatem są sobie równe.
-\end{proof}
-
-
