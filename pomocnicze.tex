@@ -1,4 +1,4 @@
-\chapter{Pomocnicze lematy}
+\chapter{Pomocnicze lematy i twierdzenia}
 \section{Nietrywialne pierwiastki wielomianów nie należą do $\overline{\Q}(x)$}
 \begin{lemma}
   Niech $a \in \overline{\Q}, a \neq 0, f(x) \in \overline{\Q}[x], \deg f(x)
@@ -159,6 +159,7 @@ pierwiastka to $\prod_{i=1}^s q_{j_i}$.
   \end{itemize}
   \label{th:14_1_1}
 \end{theorem}
+
   Wynika wprost z \cite[Twierdzenie 14.1.1]{rom06}
 
 \begin{theorem}
@@ -171,6 +172,7 @@ pierwiastka to $\prod_{i=1}^s q_{j_i}$.
 \end{theorem}
 
   Wynika wprost z \cite[Twierdzenie 14.1.2]{rom06}
+
 \begin{lemma}{Lemat o związku między prostymi rozszerzeniami}
   Niech $E$ będzie podciałem ciała $\C$ i $\overline{\Q} \subseteq E$.
   Niech $p$ będzie nieparzystą liczbą pierwszą.
@@ -198,19 +200,30 @@ pierwiastka to $\prod_{i=1}^s q_{j_i}$.
   \ref{th:14_1_2} i tego, że $x^p -a, x^p - b$ są nierozkładalne w $E$.
 \end{proof}
 
-  \begin{verbatim}
-    Dummit 13.1.4
-      Jeśli p(x) w F[x] nierozkładalny stopnia n. To niech K = F[x]/p(x),
-      wówczas K:F = n
+\begin{theorem}
+  Niech $p(x) \in F[x]$ to nierozkładalny w $F$ wielomian stopnia $n$.
+  Niech $K = F[x]/p(x)$. Wówczas $[K:F] = n$
+  \label{th:13_1_6}
+\end{theorem}
 
-    Dummit 13.1.6
-      Jeśli alpha \not \in F, ale p(alpha) = 0 i p(x) nierozkladalny w F to
-        F(alpha) = F[x]/p(x)
-  \end{verbatim} 
+  \cite[Twierdzenie 13.1.6]{dum04}
 
-  Jednym z podstaowych faktów teorii ciał jest
-  $\left[E\left(\sqrt[p^m]{a}\right):E\right] = p^m$ 
-  \cite[Twierdzenie 13.1.4]{dum04}.
-  Bardziej ogólnie, jeśli $A \in E$ i $l$ jest największą liczbą całkowitą
-  spełniającą $0 \leq l \leq n$, że $\sqrt[p^l]{A} \in E$ to stopień
-  rozszerzenia wynosi $p^{n-l}$.
+\begin{theorem}
+  Niech $F, K$ to będą ciała takie, że $F \subseteq K$.
+  Jeśli $\alpha \in K, \alpha \not \in F$ i dla pewnego wielomianu
+  nierozkładalnego w $F$: $p(x) \in F[x]$ mamy $p(\alpha) = 0$ to
+  $F(\alpha) = F[x]/p(x)$
+  \label{th:13_1_4}
+\end{theorem}
+
+  \cite[Twierdzenie 13.1.4]{dum04}
+
+\begin{lemma}
+  Niech $E$ będzie podciałem $\C$. Niech $p$ będzie liczbą pierwszą, $a \in E$,
+  $m \in N$ i $x^p - a$ będzie nierozkładalny w $E$.
+  Jesli $\sqrt[p^m]{a}$ jest pewnym pierwiastkiem $x^{p^m} - a$ to
+  $\left[E \left(\sqrt[p^m]{a} \right) : E \right] = p^m$.
+\end{lemma}
+
+  Widzieliśmy już, że $x^{p^m} - a$ musi być nierozkładalny. Zatem korzystając z
+  twierdzeń \ref{th:13_1_4}, \ref{th:13_1_6} otrzymamy żądany rezultat.
