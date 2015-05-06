@@ -31,10 +31,25 @@ czynniku mamy wielomian stopnia $(p-1)\deg g(x)$ co jest większe od zera.
 Sprzeczność.
 \end{proof}
 
-\section{Lematy o słowach wielomianowych} 
+\section{Lematy o słowach wielomianowych}
 \begin{defin}[Słowo wielomianowe]
-[TODO tutaj definicja słowa wielomianowego]
+  Niech $p$ będzie ustaloną nieparzystą liczbą pierwszą. Wielomian postaci
+
+  \begin{equation}
+    \left( \ldots \left(\left(x + a_1\right)^{q_1} + a_2\right)^{q_2} +
+      \ldots + a_n\right)^{q_n}, a_n \in Z, q_n = p^{k_i}, k_i \in \N
+  \label{eq:polynomial_word_extended}
+  \end{equation}
+
+  nazywamy słowem wielomianowym.
 \end{defin}
+
+Nazwa słowo wielomianowe bierze się stąd, że ten wielomian można przedstawić w
+postaci iloczynu $t^{a_1}e_p^{k_1} \ldots t^{a_n}e_p^{k_n}$, gdzie $t, e_p \in
+\Sigma_{\R}, t(x) = x + 1, e_p(x) = x^p$. W rozdziale \ref{ch:white_theorem}
+pokażemy, że jest to grupa wolna zatem ta reprezentacja stanowi słowo
+zredukowe.
+
 \begin{lemma}
   Każdy pierwiastek słowa wielomianowego $f$ jest pierwiastkiem o krotności
   będącej potęgą $p$.
@@ -44,10 +59,10 @@ Sprzeczność.
 \begin{proof}
 Definiujemy ciąg słów wielomianowych $f_1, f_2, \ldots, f_{l+1}$ jako ciąg
 kolejnych aplikacji funkcji postaci $(x+a_i)$ ze wzoru
-\ref{eq:gp_element}. 
+\ref{eq:polynomial_word_extended}.
 To jest
-\[f_1(x) = \left(x + a_1\right), f_2(x) = \left(f_1^{q_1}(x) +
-a_2\right), \ldots, f_{l+1}(x) = f_l^{q_l}(x) = f(x)\]
+\[f_1(x) = x + a_1, f_2(x) = f_1^{q_1}(x) + a_2, \ldots, f_{l+1}(x) =
+f_l^{q_l}(x) = f(x)\]
 
 Różniczkując otrzymujemy:
 \[f' = \prod_{i=1}^l q_i f_i^{q_i - 1}\]
@@ -85,21 +100,21 @@ pierwiastka to $\prod_{i=1}^s q_{j_i}$.
   \[ f(x) f^t(\omega x) = \frac{h^p(x)}{g \left( x^p \right)} \]
   Po lewej stronie równania mamy wielomian, zatem $g \left( x^p \right) |
   h^p(x)$. Wielomiany $g', h'$ można skonstruować indukcyjnie następującą
-  metodą. Niech dany będzie wielomian postaci 
+  metodą. Niech dany będzie wielomian postaci
   $\frac{n_l \left( x^p \right) m^p(x)}{n_m \left( x^p \right)}$, gdzie $n_l,
   n_m, m$ to wielomiany w $\overline{\Q}$. Zauważmy, że $x^p - a$ ma wszystkie
   $p$ pierwiastków różne i dla różnych $a$ te wielomiany nie mają wspólnych
   pierwiastków. Jeśli $n_m \equiv 1$ to nic nie robimy, bo wtedy $g' = n_l, h' =
   m$.
   Jeśli $\left(x^p - a \right) | n_m \left(x^p\right)$ i $\left(x^p - a \right)
-  | n_l \left(x^p\right)$ to bierzemy 
+  | n_l \left(x^p\right)$ to bierzemy
   $n_l' = \frac{n_l(x)}{x^p - a}, n_m' = \frac{n_m(x)}{x^p - a}$ i w kolejnym
   kroku podstawiamy te skrócone wielomiany.
-  W przeciwnym wypadku 
-  $\left(x^p - a \right) | n_m \left(x^p \right)$ i 
+  W przeciwnym wypadku
+  $\left(x^p - a \right) | n_m \left(x^p \right)$ i
   $\left(x^p - a \right) | h^p \left(x \right)$. Wszystkie pierwiastki
   $\left(x^p - a \right)$ są różne zatem $\left(x^p - a \right) | h(x)$.
-  Bierzemy zatem: 
+  Bierzemy zatem:
   $n_l' = n_l(x)\left(x^p - a \right)^{p-1}, n_m' = \frac{n_m(x)}{x^p -
   a}, h' = \frac{h(x)}{x^p - a}$.
   W każdym kroku skracamy mianownik z kolejnych dzielników zatem w końcu
@@ -169,7 +184,7 @@ pierwiastka to $\prod_{i=1}^s q_{j_i}$.
 \begin{theorem}
   Niech $F$ to ciało i $u \in F$.
 
-  Jeśli $p$ jest nieparzystą liczbą pierwszą i $p \in \N$ to wielomian 
+  Jeśli $p$ jest nieparzystą liczbą pierwszą i $p \in \N$ to wielomian
   $x^{p^m} - u$ jest nierozkładalny w ciele $F$, jeśli
   $x^p - u$ nie ma pierwiastka w ciele $F$.
   \label{th:14_1_2}
@@ -192,7 +207,7 @@ pierwiastka to $\prod_{i=1}^s q_{j_i}$.
   Z \cite[Twierdzenie 14.2.8]{rom06} jeśli $x^{p^m} - a$ i $x^{p^n} - b$ są
   nierozkładalne to mają to samo rozszerzenie rozdzielcze nad $E$ wtedy i tylko
   wtedy, gdy istnieje $c \in E$ i $t \in \Z$ niepodzielne przez $p$ takie, że
-  $a = c^nb^t$.  
+  $a = c^nb^t$.
   Jako, iż $\overline{\Q} \subseteq E$ to jeśli $F$ rozszerzenie $E$ i $\alpha
   \in F$  jest pierwiastkiem $x^{p^m} -a$ to jeśli $\omega$ jest pierwotnym
   pierwiastkiem jedynki stopnia $p^m$ to $x - \omega^i \alpha, 0 \leq i \leq p^m

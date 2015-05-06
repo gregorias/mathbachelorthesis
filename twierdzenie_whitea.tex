@@ -6,7 +6,7 @@ Niech $p$ będzie dowolną nieparzystą liczbą pierwszą. Rozważmy permutacje 
 x \rightarrow  x+1$ i $e: x \rightarrow x^p$ zbioru liczb rzeczywistych. W 1986
 Samuel White \cite{whi88} udowodnił, że dla dowolnych liczb liczb całkowitych
 $a_1, \ldots, a_n, k_1, \ldots, k_n$, gdzie $a_2, \ldots, a_n, k_1, \ldots,
-k_{n-1}$ są niezerowe, odwzorowanie 
+k_{n-1}$ są niezerowe, odwzorowanie
 \begin{equation*}
   t^{a_1}e^{k_1}\ldots t^{a_n}e^{k_n}
 \end{equation*}
@@ -17,14 +17,12 @@ postaci $p^{k_i}$:
     \ldots + a_n\right)^{q_n}
 \label{eq:gp_element}
 \end{equation}
-nie jest równe $x$. Innymi słowy, korzystając z definicji z poprzedniej sekcji,
-podgrupa $G_p$ grupy $\Sigma_\R$ generowana przez $t, e$ jest wolna.
-
-Słowa zredukowane postaci \ref{eq:gp_element}, gdzie wykładniki $k_i$ są
-nieujemne, będziemy nazywać \textbf{słowami wielomianowymi}.
+nie jest równe $x$. Innymi słowy podgrupa $G_p = \langle t, e \rangle$ grupy
+$\Sigma_\R$ generowana przez $t, e$ jest wolna.
 
 W tym rozdziale przedstawimy dowód tego twierdzenia oraz faktów pomocniczych.
 
+[TODO zobaczyć czy czystość jest potrzebna]
 \begin{defin}[Rozszerzenie czysto przestępne]
   Rozszerzenie $L$ ciała $K$ nazywamy czysto przestępnym wtw., gdy istnieje
   zbiór algebraicznie niezależny $A \subseteq L$ taki, że $K(A) = L$. Równoważne
@@ -32,23 +30,35 @@ W tym rozdziale przedstawimy dowód tego twierdzenia oraz faktów pomocniczych.
   zmiennymi $\left\{X_a : a \in A\right\}$.
 \end{defin}
 
-\section{Przestępny łańcuch}
-\label{sec:przelan}
+\section{Przygotowania}
+\label{sec:preparation}
+Niech $K = \overline{\Q}$ - domknięcie ciała liczb wymiernych, czyli zbiór
+wszystkich liczb algebraicznych.
+Niech $\xi$ to będzie dowolna liczba przestępna.
+Potrzebujemy zdefiniować ciąg liczb przestępnych będących wynikiem kolejnych
+aplikacji liter tworzących słowo $w$ na $\xi$.
+W tym celu oznaczmy sobie możliwe elementy słowa $w$.
+Niech $e_m: x \rightarrow x^{p^m}, m \geq 1$ a jej odwrotność to $r_m: x
+\rightarrow x^{\frac{1}{p^m}}, m \geq 1$.
+Translację oznaczymy jako $t_a: x \rightarrow x + a, a \in \N, a \neq 0$.
+Słowo $w$ będziemy czasem traktowali jako ciąg iloczyn postaci $w =
+v_1\ldots v_n$, gdzie $v_i$ to $t_a$, $e_m$, lub $r_m$.
 
-Niech $K = \bar{\Q}$ - domknięcie ciała liczb wymiernych, czyli zbiór wszystkich
-liczb algebraicznych.
+Możemy teraz zdefiniować $n+1$-elementowy ciąg $\left(\xi_i\right)$ jako:
+\[\xi_1 = \xi, \xi_{j+1} = v_j\left(\xi_j\right), j \in \{1, \ldots, n\}\]
+W szczególności $\xi_{n+1} = w(\xi)$.
 
-Niech $\xi$ to będzie dowolna liczba przestępna. Potrzebujemy zdefiniować ciąg
-liczb przestępnych będących wynikiem kolejnych aplikacji liter tworzących słowo
-$w$ na $\xi$. W tym celu oznaczmy sobie możliwe elementy. Niech $e_m: x
-\rightarrow x^{p^m}, m \geq 1$ a jej odwrotność to $r_m: x \rightarrow
-x^{\frac{1}{p^m}}, m \geq 1$. Translację oznaczymy jako $t_a: x \rightarrow x +
-a, a \in \N, a \neq 0$.  Wówczas słowo $w$ to ciąg symboli postaci $w =
-v_1\ldots v_n$, gdzie $v_i$ to $t_a$, $e_m$, lub $r_m$. 
+Oprócz rozważania pojedyńczych generatorów w słowie $w$, konieczne jest
+rozpatrzenie całych podsłów kończących się pierwiastkiem. Połączmy podsłowa
+$v_i$ w sylaby $s_1, \ldots, s_k$, gdzie każda sylaba jest postaci:
+$f_jr_{m_j}$, $f_j$ jest słowem wielomianowym a $m_j \geq 1$ dla
+$1 \leq j \leq k-1$. Zatem $w = \prod_{i=1}^k s_i$.
+Aby zachować proste oznaczenia pozwalamy na to by $f_1 = x$  i $s_k = f_k$, w
+tym przypadku będziemy przyjmowali, że $m_k = 0$.
 
-Definiujemy $n+1$-elementowy ciąg $\left(\xi_i\right)$ jako: $\xi_1 = \xi,
-\xi_{j+1} = \xi_{j}v_j, j \in \{1, \ldots, n\}$. W szczególności $\xi_{n+1} =
-w(\xi)$.
+Podobnie jak w dla $\xi_i$ definiujemy ciąg $\left(\xi_i\right)$ jako
+\[\mu_1 = \xi_1 = \xi, \mu_{j+1} = s_j\left(\mu_j\right)\]
+dla $1 \leq j \leq k$. Wówczas $\mu_{k+1} = \xi_{n+1} = w(\xi)$.
 
 Rozważmy teraz ciąg rozszerzeń ciała $K$:
 $
@@ -56,81 +66,57 @@ K\left(\xi_1\right),
 K\left(\xi_1, \xi_2\right),
 K\left(\xi_1, \xi_3\right),
 \ldots,
-K\left(\xi_1, \xi_{n+1}\right)$.
+K\left(\xi_1, \xi_{n+1}\right)$ i
+$
+K\left(\mu_1\right),
+K\left(\mu_1, \mu_2\right),
+\ldots,
+K\left(\mu_1, \mu_{n+1}\right)$.
 
-Twierdzę, że ten ciąg tworzy wieżę:
+Aby udowodnić twierdzenie White'a potrzebne będzie indukcyjne udowodnienie
+silniejszej tezy. Mianowicie, że te dwa ciągi rozszerzeń tworzą wieże:
 
 \begin{equation}
 K\left(\xi_1\right) \subseteq
 K\left(\xi_1, \xi_2\right) \subseteq
-K\left(\xi_1, \xi_3\right) \subseteq 
+K\left(\xi_1, \xi_3\right) \subseteq
 \ldots
 \subseteq
 K\left(\xi_1, \xi_{n+1}\right)
 \label{eq:tower}
 \end{equation}
 
+\begin{equation}
+  K(\mu_1) \subsetneq
+  K(\mu_1, \mu_2) \subsetneq
+  \ldots \subsetneq
+  K(\mu_1, \mu_{k+1})
+  \label{eq:strict_tower}
+\end{equation}
+Jeśli $s_k$ nie kończy się pierwiastkiem to ostatnie zawieranie właściwe nie
+zachodzi.
+
 Załóżmy, że \ref{eq:tower} zostało udowodnione. Z tego ciągu wynika nierówność
 $w\left(\xi\right) \neq \xi$. Aby to zauważyć wystarczy rozważyć dwa przypadki.
 Jeśli wśród $v_i$ nie ma pierwiastków to $w$ jest wielomianem nad $\Q$. Wówczas
 $w(\xi) = \xi$ jest sprzeczne z przestępnością $\xi$ zatem $w(\xi) \neq \xi$.
 Niech, więc $v_j = r_m$ będzie pierwszym pierwiastkiem wśród napisu $w$. Wówczas
-$\xi_j \in K\left(\xi_1\right)$ i pokażę również, że $\xi_{j}^{\frac{1}{p}} \not
-\in K(\xi_1)$. Zatem $K\left(\xi_1\right) \subset K\left(\xi_1,
+$\xi_j \in K\left(\xi_1\right)$. Z lematu \ref{lem:nontrivial_roots} mamy, że
+$\xi_{j}^{\frac{1}{p}} \not \in K(\xi_1)$ (dodatkowo \ref{eq:strict_tower} to
+stwierdza). Zatem $K\left(\xi_1\right) \subsetneq K\left(\xi_1,
 \xi_{j+1}\right)$. Z \ref{eq:tower} mamy zatem, że $K\left(\xi_1\right) \neq
-  K\left(\xi_1, \xi_{n+1}\right)$, czyli $w(\xi) \neq \xi$.
+K\left(\xi_1, \xi_{n+1}\right)$, czyli $w(\xi) \neq \xi$.
 
-Dowód \ref{eq:tower} zostanie przeprowadzony indukcyjne, równocześnie z dwoma
-innymi własnościami.
-
-\section{Podłańcuch}
-
-Zamiast rozpatrywać $w$ jako napis symboli $v_i$, zbierzemy je w sylaby: $s_1,
-\ldots, s_k$, gdzie każda sylaba kończy się pierwiastkiem $r_{m_j}$. Niech słowo
-$f \in G_p$ będzie słowem wielomianowym, jeśli $f$ składa się tylko z
-translacji $t_a$ i dodatnich potęg $e_m$, czyli $f(x)$ jest po prostu
-wielomianem. Możemy wówczas napisać, że $w = s_1\ldots s_k$, gdzie $s_j =
-f_jr_{m_j}$, $f_j$ jest $j$-tym słowem wielomianowym. Aby zachować proste
-oznaczenia pozwalamy na to by $f_1 = x$  i $s_k = f_k$, w tym przypadku będziemy
-przyjmowali, że $m_k = 0$. 
-
-Podobnie jak w 
-\ref{sec:przelan} definiujemy podłańcuch $\left\{\mu_1, \ldots,
-\mu_{k+1}\right\}$ jako $\mu_1 = \xi_1 = \xi, \mu_{j+1} = s_j\left(\mu_j\right)$
-dla $1 \leq j \leq k$. Wówczas $\mu_{k+1} = \xi_{n+1} = w(\xi)$.
-
-Zauważmy, że jeśli zachodzi \ref{eq:tower} to zachodzi też następujące:
-
-\[
-  K\left(\mu_1\right) \subseteq
-  K\left(\mu_1, \mu_2\right) \subseteq
-  \ldots \subset
-  K\left(\mu_1, \mu_{k+1}\right)
-\]
-
-Pokazaliśmy już, że pierwsze zawieranie jest ścisłe. Drugą rzeczą, którą
-będziemy dowodzić jest właśnie:
-
-\begin{equation}
-  K(\mu_1) \subset
-  K(\mu_1, \mu_2) \subset
-  \ldots \subset
-  K(\mu_1, \mu_{k+1})
-  \label{eq:strict_tower}
-\end{equation}
-
-Jeśli $m_k = 0$ to ostatnie zawieranie nie jest ścisłe.
-
-[TODO czy zawieranie ścisłe to właściwy zwrot]
-
-Do trzeciej własności zauważmy, że $\mu_2^{p^{m_1}} = f_1\left(\mu_1\right)$.
-Zatem $K\left(\mu_1\right)\left(\sqrt[p^{m_1 -
-1}]{f_1\left(\mu_1\right)}\right)$ jest rozszerzeniem prostym
-$K\left(\mu_1\right)$ o stopniu $p$.
-[TODO w pracy tutaj jest pierwiastek stopnia p i rozszerzenia stopnia p. Czy to
-jest błąd?]
-To rozszerzenie jest zawarte w $K\left(\mu_1, \mu_{k+1}\right)$. Czy może
-istnieć inne rozszerzenie proste o tej własności? Okazuje się, że nie.
+Dowód obu własności zostanie przeprowadzony indukcyjne. Dodatkowo będziemy
+potrzebować jeszcze trzeciej właśności, którą będziemy dowodzić równocześnie z
+obiema powyższymi. Zauważmy, że $\mu_2^{p^{m_1}} = f_1\left(\mu_1\right)$.
+Zatem $K\left(\mu_1\right)\left(\sqrt[p]{f_1\left(\mu_1\right)}\right)$ jest
+rozszerzeniem czystym $K\left(\mu_1\right)$ o stopniu $p$.
+To rozszerzenie jest zawarte w $K\left(\mu_1, \mu_2\right)$ i
+$K\left(\mu_1, \mu_{k+1}\right)$.
+Czy może istnieć inne czyste rozszerzenie stopnia $p$, które zawiera się w
+$K\left(\mu_1, \mu_{k+1}\right)$, ale nie zawiera się w $K\left(\mu_1,
+\mu_2\right)$? Okazuje się, że nie.
 
 \section{Rezultat}
 
@@ -143,13 +129,13 @@ Oznaczmy $K\left(\mu_1, \mu_j\right)$ jako $K_j$.
   rzeczywistą liczbą przestępną. Wówczas
 
   \begin{description}
-    \item{$H_1$:} 
+    \item{$H_1$:}
       $K\left(\xi_1\right)\subseteq
       K\left(\xi_1, \xi_2\right)\subseteq
       \ldots \subseteq
       K\left(\xi_1, \xi_{n+1}\right)$
     \item{$H_2$:}
-      $K_1 \subset K_2 \subset \ldots \subset K_{k+1}$ (ostatnie zawieranie jest
+      $K_1 \subsetneq K_2 \subset \ldots \subset K_{k+1}$ (ostatnie zawieranie jest
       równością, jeśli $m_k = 0$)
     \item{$H_3$:}
       Jeśli $F$ jest prostym rozszerzeniem $K_1$ rzędu $p$  zawartym w $K_{k+1}$
@@ -169,11 +155,11 @@ $n$.
 
 Dla $n=1$ mamy:
 \begin{description}
-  \item{$H_1$:} 
+  \item{$H_1$:}
     $K\left(\xi_1\right) \subseteq K\left(\xi_1, \xi_2\right)$, co jest
     oczywiste.
   \item{$H_2$:} Dla $m_1 = 0$ ta hipoteza nic nie stwierdza. W przeciwnym
-    wypadku ta hipoteza stwierdza, że $K\left(\xi_1\right) \subset K\left(\xi_1,
+    wypadku ta hipoteza stwierdza, że $K\left(\xi_1\right) \subsetneq K\left(\xi_1,
     \xi_2\right)$. $\xi_2$ jest pierwiastkiem $\xi_1$ o stopniu podzielnym przez
     $p$, więc wykorzystując lemat \ref{lem:nontrivial_roots} i znany fakt
     $K\left(\xi_1\right) \cong K[x]$ mamy, że $\xi_2 \not \in
@@ -224,13 +210,13 @@ Z $H_1(n)$ zaaplikowanego do $\left(\xi_1, \xi_{n+1}\right)$ oraz $\left(\xi_2,
 
 Załóżmy, że $H_1(n+1)$ nie zachodzi, tj. $K\left(\xi_1, \xi_{n+2}\right)$ nie
 zawiera się w $K\left(\xi_1, \xi_{n+1}\right)$. Wówczas $v_{n+1} = e_m$ i $m_k =
-0$. 
+0$.
 Naturalnie $\xi_{n+2} = v_{n+1}\left(\xi_{n+1}\right) \in
 K\left(\xi_{n+1}\right)$, czyli $K\left(\xi_1, \xi_{n+2}\right) \subset
 K\left(\xi_1, \xi_{n+1}\right)$.
 Zauważmy, że jeśli $\xi_2 \in K\left(\xi_1\right)$ to z ostatniego zawierania w
 \ref{eq:h_1_second} mamy:
-\[ 
+\[
   K\left(\xi_1, \xi_{n+1}\right) =
   K\left(\xi_2, \xi_{n+1}\right)\left(\xi_1\right) \subseteq
   K\left(\xi_2, \xi_{n+2}\right)\left(\xi_1\right) =
@@ -246,7 +232,7 @@ własności, gdyż jeśli oznaczymy podstawione $\xi_1$ jako $\xi_1^*$ to
 $K\left(\xi_1\right) \subseteq K\left(\xi_1^*\right)$.
 [TODO czemu tak chcemy?]
 
-Dodatkowo zauważmy, że 
+Dodatkowo zauważmy, że
 $\xi_{n+2} \in K\left(\xi_{n+1}\right) \land \xi_{1} \in K\left(\xi_{2}\right)$.
 Zatem z \ref{eq:h_1_first} i \ref{eq:h_1_second} mamy
 \[
@@ -272,7 +258,7 @@ $K_k$, ale to rozszerzenie niekoniecznie jest czyste.
 
 Niech $\omega \neq 1$ będzie $p$-tym pierwiastkiem jedności zawartym w $K_k$.
 Możemy zdefiniować $K_{k+1}$-automorfizm $\tau$ ciała $K_k$, który przekształca
-$\mu_2$ na $\omega \mu_2$. 
+$\mu_2$ na $\omega \mu_2$.
 Zauważmy, że $K_2 = K\left(\mu_2\right) = K\left(\omega \mu_2\right) =
 \overline{K_2}$.
 Niech $\overline{\mu_3} = \tau(\mu_3) \in K_k$ i niech druga sylaba $s_2$ słowa
@@ -306,9 +292,9 @@ g\left(x^p\right)$ i sprzeczności.
 
 \section{Dowód $H_2(n+1)$}
 Zakładamy $H_1(n+1), H(n)$. Będziemy używać założenie indukcyjne na odwrotności
-podsłowa $w$. 
+podsłowa $w$.
 
-Mając $H_2(n)$ musimy udowodnić, że $K_k \subset K_{k+1}$, gdy $m_k \geq 1$.
+Mając $H_2(n)$ musimy udowodnić, że $K_k \subsetneq K_{k+1}$, gdy $m_k \geq 1$.
 Załóżmy, że $H_2(n+1)$ nie zachodzi, czyli $K_k = K_{k+1}$. To oznacza, że
 $\mu_{k+1} \in K_k$, zatem naturalnie $\mu_{k+1}^{p^{m_k -1}} \in K_k$. Możemy
 więc zastąpić $v_n = r_{m_k}$ przez $r_1$ a przez to poprzednie $\mu_{k+1}$
@@ -319,7 +305,7 @@ $\left(\xi_2, \xi_{n+2}\right)$. Zatem $\mu_{k+1} \not \in K\left(\xi_2,
 \mu_k\right)$ i $w$ musi zaczynać się od potęgi $v_1 = e_q$.
 
 Z hipotezy $H_1(n+1)$ mamy
-\[ 
+\[
   K\left(\xi_2, \mu_k\right) \left(\mu_{k+1}\right)
   =
   K\left(\xi_2, \mu_{k+1}\right)
@@ -333,10 +319,10 @@ Z hipotezy $H_1(n+1)$ mamy
 
 Poprzez tą samą metodę co w poprzedniej sekcji dostowojemy tak $\xi_1$ aby móc
 założyć $q = 1$. Wówczas dalej będzie $\xi_1 \not \in K\left(\xi_2,
-\mu_k\right)$, ale za to uzyskamy równość 
-$K\left(\xi_2, \mu_{k+1}\right) 
-= K\left(\xi_1, \mu_k\right) 
-= K\left(\mu_1, \mu_{k+1}\right)$. Wynika to z tego, iż 
+\mu_k\right)$, ale za to uzyskamy równość
+$K\left(\xi_2, \mu_{k+1}\right)
+= K\left(\xi_1, \mu_k\right)
+= K\left(\mu_1, \mu_{k+1}\right)$. Wynika to z tego, iż
 $
 K\left(\xi_2, \mu_{k}\right) \left(\mu_{k+1}\right),
 K\left(\xi_2, \mu_{k}\right) \left(\xi_{1}\right)$ oba są rozszerzeniami
@@ -355,20 +341,20 @@ się $r_1$. W szczególności $u\left(\mu_k\right) = \xi_1$ zatem $u = \left(\mu
 sylab z $u$ jako $\lambda_1 = \mu_k, \lambda_2 =
 s_{k-1}^{-1}\left(\lambda_1\right), \ldots$.
 
-Niech $F = K \left(\mu_k, \mu_{k+1}\right)$. Mamy, że 
+Niech $F = K \left(\mu_k, \mu_{k+1}\right)$. Mamy, że
 $\mu_{k+1}^p = f\left(\mu_k\right)$ zatem $F$ jest czystym rozszerzeniem
 $K\left(\lambda_1 \right)$ stopnia $p$ zawartym w $K \left( \mu_k, \xi_1
-\right)$, ale nie $K \left(\mu, \lambda_2 \right)$. 
+\right)$, ale nie $K \left(\mu, \lambda_2 \right)$.
 Aplikacja $H_3(n)$ do $u$ daje nam, że $F \subseteq K \left( \lambda_1,
 \lambda_2 \right)$.
 
 Załóżmy, że $u$ składa się z więcej niż jednej sylaby. Aplikacja $H_1(n)$ do $u$
-daje nam 
+daje nam
 $K \left( \lambda_1, \lambda_2 \right) \subseteq K \left( \lambda_1, \xi_2
 \right) = K \left( \mu_k, \xi_2 \right)$, które dają $\mu_{k+1} \in F \subseteq
 K \left( \xi_2, \mu_k \right)$.
 
-Zatem $u$ jest monosylabowe i $\xi_1^p \in K \left( \mu_k\right)$. Zatem 
+Zatem $u$ jest monosylabowe i $\xi_1^p \in K \left( \mu_k\right)$. Zatem
 $K \left( \mu_k \right) \left(\xi_1 \right) = K \left(\mu_k \right)
 \left(\mu_{k+1} \right) = F$. Zatem całe słowo $w$ jest postaci
 \[w = e_1 g^{-1}r_lfr_1\]
@@ -388,7 +374,7 @@ K_k$, gdyż w przeciwnym wypadku z $H_3(n)$ mielibyśmy $F \subseteq K_2$.
 Podobnie zakładamy, że $w$ kończy się pierwiastkiem $r_{m_k}, m_k \geq 1$.
 
 Niech $F_1 = F \left( \mu_k \right)$. $K_k \subseteq F_1$, gdyż $\mu_1, \mu_k
-\in F_1$. $F_1$ jest czystym rozszerzeniem $K_k$ stopnia $p$, gdyż 
+\in F_1$. $F_1$ jest czystym rozszerzeniem $K_k$ stopnia $p$, gdyż
 
 \[
 \left[F_1:F\right]\left[F:K_1 \right] =
@@ -403,7 +389,7 @@ dostosować tak by $m_k = 1$ i $F_1 = K_{k+1}$.
 Zapisujemy końcówkę słowa $w$ podobnie jak w [TODO]. Niech $F_0 = F \left(
 \mu_{k-1} \right)$, podcialo $F_1$. Naturalnie $F_0 \supseteq K_{k-1}$ i
 podobnie jak w przypadku $F_1$: $\left[F_0:K_{k-1} \right] = p$. Z drugiej
-strony $\left[ K_{k+1} : K_{k-1} \right] = p^{l+1}$. 
+strony $\left[ K_{k+1} : K_{k-1} \right] = p^{l+1}$.
 Zatem $F_1 = F_0 \left(\mu_k \right)$ jest prostym rozszerzeniem $F_0$ o stopniu
 $p^l$ [TODO wyjaśnienie].
 
@@ -415,10 +401,10 @@ pierwiastkiem jedności. Niech $\overline{\mu_{k+1}} = \tau \left( \mu_{k+1}
 Zatem $K_k \left(\overline{\mu}_{k+1} \right)$ jest prostym rozszerzeniem $K_k$
 stopnia $p$ zawartym w $K_{k+1}$ zatem musi być identyczne z $K_{k+1}$.
 
-Z [todo] istnieje $t$ takie, że $p \not | t$ i 
+Z [todo] istnieje $t$ takie, że $p \not | t$ i
 $\mu_{k+1} \overline{\mu}_{k+1}^t \in K_k$. Dodatkowo
 \[ K \left( \mu_k, \mu_{k+1} \overline{\mu}_{k+1}^t \right)
   \subseteq
-  K \left( \mu_k, \mu_1 \right) 
+  K \left( \mu_k, \mu_1 \right)
 \]
 
