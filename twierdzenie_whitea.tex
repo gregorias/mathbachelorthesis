@@ -22,16 +22,6 @@ $\Sigma_\R$ generowana przez $t, e$ jest wolna.
 
 W tym rozdziale przedstawimy dowód tego twierdzenia oraz faktów pomocniczych.
 
-[TODO zobaczyć czy czystość jest potrzebna]
-[TODO tutaj czystość wydaje się być definiowana jako rozszerzenie algebraiczne
-(proste?)]
-\begin{defin}[Rozszerzenie czysto przestępne]
-  Rozszerzenie $L$ ciała $K$ nazywamy czysto przestępnym wtw., gdy istnieje
-  zbiór algebraicznie niezależny $A \subseteq L$ taki, że $K(A) = L$. Równoważne
-  gdy $L$ jest izomorficzne z ciałem funkcji wymiernych w ciele $K$ nad
-  zmiennymi $\left\{X_a : a \in A\right\}$.
-\end{defin}
-
 \section{Przygotowania}
 \label{sec:preparation}
 Niech $K = \overline{\Q}$ - domknięcie ciała liczb wymiernych, czyli zbiór
@@ -113,10 +103,10 @@ Dowód obu własności zostanie przeprowadzony indukcyjne. Dodatkowo będziemy
 potrzebować jeszcze trzeciej właśności, którą będziemy dowodzić równocześnie z
 obiema powyższymi. Zauważmy, że $\mu_2^{p^{m_1}} = f_1\left(\mu_1\right)$.
 Zatem $K\left(\mu_1\right)\left(\sqrt[p]{f_1\left(\mu_1\right)}\right)$ jest
-rozszerzeniem czystym $K\left(\mu_1\right)$ o stopniu $p$.
+rozszerzeniem prostym $K\left(\mu_1\right)$ o stopniu $p$.
 To rozszerzenie jest zawarte w $K\left(\mu_1, \mu_2\right)$ i
 $K\left(\mu_1, \mu_{k+1}\right)$.
-Czy może istnieć inne czyste rozszerzenie stopnia $p$, które zawiera się w
+Czy może istnieć inne proste rozszerzenie stopnia $p$, które zawiera się w
 $K\left(\mu_1, \mu_{k+1}\right)$, ale nie zawiera się w $K\left(\mu_1,
 \mu_2\right)$? Okazuje się, że nie.
 
@@ -140,7 +130,7 @@ Oznaczmy $K\left(\mu_1, \mu_j\right)$ jako $K_j$.
       $K_1 \subsetneq K_2 \subsetneq \ldots \subsetneq K_{k+1}$ (ostatnie zawieranie jest
       równością, jeśli $m_k = 0$)
     \item{$H_3$:}
-      Jeśli $F$ jest czystym rozszerzeniem $K_1$ rzędu $p$  zawartym w $K_{k+1}$
+      Jeśli $F$ jest prostym rozszerzeniem $K_1$ rzędu $p$  zawartym w $K_{k+1}$
       to $F \subseteq K_2$.
   \end{description}
   \label{th:hypothesis_h}
@@ -266,13 +256,13 @@ Używając sylab możemy zauważyć, że powyższe daje nam:
   K\left(\mu_2, \mu_{k}\right)
 \]
 Jest to ciało, które właściwie zawiera $K_{k+1}$. Dodatkowo $K_{k+1} \cap K_2 =
-K_1$ i $K_k = K_{k+1}\left(\mu_2\right)$ jest czystym rozszerzeniem $K_{k+1}$.
+K_1$ i $K_k = K_{k+1}\left(\mu_2\right)$ jest prostym rozszerzeniem $K_{k+1}$.
 $K_j = K\left(\mu_2, \mu_j\right)$ dla $2 \leq j \leq k$, gdyż $\mu_1 \in
 K\left(\mu_2\right)$ i $\mu_2 \in K_j$. Zatem możemy zauważyć, że $\left[K_k :
 K_{k+1}\right] = p$.
 
 Załóżmy teraz, że $k \geq 3$. $K_{k+1}$ jest rozszerzeniem $K_1$ zawartym w
-$K_k$, ale to rozszerzenie niekoniecznie jest czyste.
+$K_k$, ale to rozszerzenie niekoniecznie jest proste.
 
 Niech $\omega \neq 1$ będzie $p$-tym pierwiastkiem jedności zawartym w $K_k$.
 Możemy zdefiniować $K_{k+1}$-automorfizm $\tau$ ciała $K_k$, który przekształca
@@ -283,13 +273,13 @@ Niech $\overline{\mu_3} = \tau(\mu_3) \in K_k$ i niech druga sylaba, $s_2$,
 słowa $w$ będzie postaci $fr_l$.
 Działanie $\tau$ na $\mu_3^{p^l} = f\left(\mu_2\right)$ daje
 $\overline{\mu_3}^{p^l} = f\left(\omega\mu_2\right)$. Zatem $K_3$ i
-$\overline{K_3} = K\left(\mu_2, \overline{\mu_3}\right)$ są czystymi
+$\overline{K_3} = K\left(\mu_2, \overline{\mu_3}\right)$ są prostymi
 rozszerzeniami stopnia $p_l$ ciała $K_2$ zawartego w $K_k$.
 
 Jeśli $l = 1$ to użycie $H_3(n)$ do podsłowa $\left(\mu_2, \mu_k\right)$ daje
 równość $\overline{K_3} = K_3$. Jeśli $l > 1$ to zauważmy, że jeśli $K_3 \cap
 \overline{K_3} = K_2$ to $K_2\left(\overline{\mu_3}^{p^{l-1}}\right)$ jest
-czystym rozszerzeniem $K\left(\mu_2\right)$ stopnia $p$ zawartym w $K_k$, ale
+prostym rozszerzeniem $K\left(\mu_2\right)$ stopnia $p$ zawartym w $K_k$, ale
 nie w $K_3$. Sprzeczność. Jeśli $K_2 \subsetneq K_3 \cap \overline{K_3}$ to
 wystarczy odpowiednio dostosować $\mu_2$ i $l$ aby otrzymać równość
 $K_2 = K_3 \cap \overline{K_3}$.
@@ -300,12 +290,13 @@ K_2\left(\overline{\mu_3}\right)$ implikuje, że dla pewnego $t$
 mamy $\mu_3\overline{\mu_3}^t \in K\left(\mu_2\right)$. Podnosząc to do
 $p^l$-tej potęgi i zastępując $\mu_2$ przez $x$ otrzymamy równanie
 \[ f(x)f^t(\omega x) = h^{p^l}(x)\]
+To jest niemożliwe z lematu \ref{lem:main_polynomial_lemma}. 
 
-To jest niemożliwe z lematu \ref{lem:main_polynomial_lemma}. Zatem $k = 2$ i $w
-= r_{m_1}f$, gdzie $f$ jest słowem wielomianowym postaci $f_0^{p^l}(x)$, gdzie
-$v_{n+1} = e_l$. Mamy zatem $K_3 = K_1$ [TODO czemu?] i  w takim razie $\mu_3 =
-f\left(\mu_2\right) \in K_1 = K\left(\mu_2^p\right)$. To prowadzi do $f_0(x) =
-g\left(x^p\right)$ i sprzeczności.
+Zatem $k = 2$ i $w = r_{m_1}f$, gdzie $f$ jest słowem wielomianowym postaci
+$f_0^{p^l}(x)$, gdzie $v_{n+1} = e_l$. Mamy zatem $K_3 = K_1$, gdyż 
+$\left[K_2 : K_3\right] = \left[K_2 : K_1\right] = p$ i $K_1 \subseteq K_3$.
+W takim razie $\mu_3 = f\left(\mu_2\right) \in K_1 = K\left(\mu_2^p\right)$. To
+prowadzi do $f(x) = g\left(x^p\right)$ i sprzeczności.
 
 \section{Dowód $H_2(n+1)$}
 Zakładamy $H_1(n+1), H(n)$. Będziemy używać założenie indukcyjne na odwrotności
@@ -359,7 +350,7 @@ sylab z $u$ jako $\lambda_1 = \mu_k, \lambda_2 =
 s_{k-1}^{-1}\left(\lambda_1\right), \ldots$.
 
 Niech $F = K \left(\mu_k, \mu_{k+1}\right)$. Mamy, że
-$\mu_{k+1}^p = f\left(\mu_k\right)$ zatem $F$ jest czystym rozszerzeniem
+$\mu_{k+1}^p = f\left(\mu_k\right)$ zatem $F$ jest prostym rozszerzeniem
 $K\left(\lambda_1 \right)$ stopnia $p$ zawartym w $K \left( \mu_k, \xi_1
 \right)$, ale nie $K \left(\mu, \lambda_2 \right)$.
 Aplikacja $H_3(n)$ do $u$ daje nam, że $F \subseteq K \left( \lambda_1,
@@ -385,13 +376,13 @@ Sprzeczność z \ref{lem:main_polynomial_lemma}.
 
 
 \section{Dowód $H_3(n+1)$}
-Niech $F$ będzie czystym rozszerzeniem stopnia $p$ ciała $K_1$. Niech $F
+Niech $F$ będzie prostym rozszerzeniem stopnia $p$ ciała $K_1$. Niech $F
 \subseteq K_{k+1}$ i $F \not \subseteq K_2$. Zakładamy, że $F \not \subseteq
 K_k$, gdyż w przeciwnym wypadku z $H_3(n)$ mielibyśmy $F \subseteq K_2$.
 Podobnie zakładamy, że $w$ kończy się pierwiastkiem $r_{m_k}, m_k \geq 1$.
 
 Niech $F_1 = F \left( \mu_k \right)$. $K_k \subseteq F_1$, gdyż $\mu_1, \mu_k
-\in F_1$. $F_1$ jest czystym rozszerzeniem $K_k$ stopnia $p$, gdyż
+\in F_1$. $F_1$ jest prostym rozszerzeniem $K_k$ stopnia $p$, gdyż
 
 \[
 \left[F_1:F\right]\left[F:K_1 \right] =
