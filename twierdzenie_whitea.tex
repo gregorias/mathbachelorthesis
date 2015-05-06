@@ -233,23 +233,23 @@ K\left(\xi_1, \xi_{n+2}\right) \cap
 K\left(\xi_1, \xi_2\right) = K\left(\xi_1\right)
 \label{eq:h_1_start_simplification}
 \end{equation}
-W tym celu podstawiamy $\xi_1 = \xi_2^{p^{m_1-1}}$ i $v_1 = r_1$. To
+W tym celu podstawiamy $\xi_1^* = \xi_2^{p^{m_1-1}}$ i $v_1^* = r_1$. To
 podstawienie daje nam \ref{eq:h_1_start_simplification}, gdyż $\xi_2 \not \in
-K\left(\xi_2^{p^{m_1}}\right)$ i stopień rozszerzenia $\left[K_2 : K_1\right] =
-p$. To podstawienie nie osłabia nam dowodzonej tezy $H_1(n+1)$, gdyż jeśli
-oznaczymy podstawione $\xi_1$ jako $\xi_1^*$ to $K\left(\xi_1\right) \subseteq
-K\left(\xi_1^*\right)$.
+K\left(\sqrt[p]{\xi_2}\right)$ i stopień rozszerzenia $\left[K_2 : K_1\right] =
+p$. To podstawienie nie osłabia nam dowodzonej tezy $H_1(n+1)$, gdyż
+$K\left(\xi_1\right) \subseteq K\left(\xi_1^*\right)$. Od teraz traktujemy
+$\xi_1$ jako $\xi_1^*$ i $v_1$ jako $v_1^*$.
 
 Zauważmy, że
 $\xi_{n+2} \in K\left(\xi_{n+1}\right)$ i $\xi_{1} \in K\left(\xi_{2}\right)$.
-Zatem z \ref{eq:h_1_first} i \ref{eq:h_1_second} mamy
+Zatem z \ref{eq:h_1_first} i \ref{eq:h_1_second}
 \[
   K\left(\xi_1, \xi_{n+1}\right) =
   K\left(\xi_2, \xi_{n+2}\right) =
   K\left(\xi_2, \xi_{n+1}\right)
 \]
 
-Używając sylab możemy zauważyć, że powyższe daje nam:
+Używając sylab możemy zauważyć, że powyższe daje
 \[
   K\left(\mu_1, \mu_{k}\right) =
   K\left(\mu_2, \mu_{k+1}\right) =
@@ -258,8 +258,9 @@ Używając sylab możemy zauważyć, że powyższe daje nam:
 Jest to ciało, które właściwie zawiera $K_{k+1}$. Dodatkowo $K_{k+1} \cap K_2 =
 K_1$ i $K_k = K_{k+1}\left(\mu_2\right)$ jest prostym rozszerzeniem $K_{k+1}$.
 $K_j = K\left(\mu_2, \mu_j\right)$ dla $2 \leq j \leq k$, gdyż $\mu_1 \in
-K\left(\mu_2\right)$ i $\mu_2 \in K_j$. Zatem możemy zauważyć, że $\left[K_k :
-K_{k+1}\right] = p$.
+K\left(\mu_2\right)$ i $\mu_2 \in K_j$.
+Z tego, że $\mu_1 \in K_k, \mu_2 = \sqrt[p]{\mu_1}$ możemy zauważyć, że
+$\left[K_k : K_{k+1}\right] = p$.
 
 Załóżmy teraz, że $k \geq 3$. $K_{k+1}$ jest rozszerzeniem $K_1$ zawartym w
 $K_k$, ale to rozszerzenie niekoniecznie jest proste.
@@ -274,7 +275,7 @@ słowa $w$ będzie postaci $fr_l$.
 Działanie $\tau$ na $\mu_3^{p^l} = f\left(\mu_2\right)$ daje
 $\overline{\mu_3}^{p^l} = f\left(\omega\mu_2\right)$. Zatem $K_3$ i
 $\overline{K_3} = K\left(\mu_2, \overline{\mu_3}\right)$ są prostymi
-rozszerzeniami stopnia $p_l$ ciała $K_2$ zawartego w $K_k$.
+rozszerzeniami stopnia $p^l$ ciała $K_2$ zawartego w $K_k$.
 
 Jeśli $l = 1$ to użycie $H_3(n)$ do podsłowa $\left(\mu_2, \mu_k\right)$ daje
 równość $\overline{K_3} = K_3$. Jeśli $l > 1$ to zauważmy, że jeśli $K_3 \cap
@@ -305,8 +306,8 @@ podsłowa $w$.
 Mając $H_2(n)$ musimy udowodnić, że $K_k \subsetneq K_{k+1}$, gdy $m_k \geq 1$.
 Załóżmy, że $H_2(n+1)$ nie zachodzi, czyli $K_k = K_{k+1}$. To oznacza, że
 $\mu_{k+1} \in K_k$, zatem naturalnie $\mu_{k+1}^{p^{m_k -1}} \in K_k$. Możemy
-więc zastąpić $v_n = r_{m_k}$ przez $r_1$ a przez to poprzednie $\mu_{k+1}$
-staje się równe $\mu_{k+1}^{p^{m_k - 1}}$.
+więc zastąpić $v_{n + 1} = r_{m_k}$ przez $r_1$ a przez to poprzednie
+$\mu_{k+1}$ staje się równe $\mu_{k+1}^{p^{m_k - 1}}$.
 Jeśli $\mu_{k+1} \in K\left(\xi_2, \mu_k\right)$ to $K\left(\xi_2, \mu_k\right)
 = K\left(\xi_2, \mu_{k+1}\right)$ co zaprzecza $H_2(n)$ zaaplikowanej do
 $\left(\xi_2, \xi_{n+2}\right)$. Zatem $\mu_{k+1} \not \in K\left(\xi_2,
@@ -337,10 +338,7 @@ K\left(\xi_2, \mu_{k}\right) \left(\xi_{1}\right)$ oba są rozszerzeniami
 $p$-tego stopnia i pierwsze ciało zawiera się w drugim.
 
 Niech końcówka słowa $w$ ma postać
-\[ w = \ldots e_mg^{-1}r_lfr_1, m,l \geq 1\]
-
-[TODO czemu $e_m$? to wcale nie jest konieczne]
-
+\[ w = \ldots g^{-1}r_lfr_1, l \geq 1\]
 $f, g$ są słowami wielomianowymi zaczynającymi się od translacji i $g^{-1}$
 oznacza odwrotność $g$. Niech $u = \left(s_1 \ldots s_{k-1}\right)^{-1}$. Jest
 jasne, że $u$ ma tę samą długość co $s_1\ldots s_{k-1}$ mniejszą od $n$ i kończy
@@ -372,7 +370,7 @@ otrzymamy
 
 \[f(x)g^t \left( x^{p^l} \right) = h^p(x)\]
 
-Sprzeczność z \ref{lem:main_polynomial_lemma}.
+Sprzeczność z lematem \ref{lem:main_polynomial_lemma}.
 
 
 \section{Dowód $H_3(n+1)$}
@@ -415,4 +413,13 @@ $\mu_{k+1} \overline{\mu}_{k+1}^t \in K_k$. Dodatkowo
   \subseteq
   K \left( \mu_k, \mu_1 \right)
 \]
+Jednakże $\left(\mu_{k+1}\overline{\mu}_{k+1}^t\right)^p =
+f\left(\mu_k\right)f^t\left(\omega \mu_k\right) \in K\left(\mu_k\right)$. Zatem
+$K \left( \mu_k, \mu_{k+1} \overline{\mu}_{k+1}^t \right)$
+jest prostym rozszerzeniem $K\left(\mu_k\right)$ stopnia $p$ zawartym w
+$K_k$. Podobnie jak w poprzedniej sekcji, aplikacja $H_3(n)$ do $u = \left(s_1
+\ldots s_{k-1}\right)^{-1}$ z $\lambda_i$ zdefiniowanymi jak poprzednio daje
+\[ \mu_{k+1}\overline{\mu}^t_{k+1} \in K\left(\lambda_1, \lambda_2\right) =
+K\left(\mu_k, \lambda_2\right)\]
 
+[TODO]
