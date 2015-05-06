@@ -23,6 +23,8 @@ $\Sigma_\R$ generowana przez $t, e$ jest wolna.
 W tym rozdziale przedstawimy dowód tego twierdzenia oraz faktów pomocniczych.
 
 [TODO zobaczyć czy czystość jest potrzebna]
+[TODO tutaj czystość wydaje się być definiowana jako rozszerzenie algebraiczne
+(proste?)]
 \begin{defin}[Rozszerzenie czysto przestępne]
   Rozszerzenie $L$ ciała $K$ nazywamy czysto przestępnym wtw., gdy istnieje
   zbiór algebraicznie niezależny $A \subseteq L$ taki, że $K(A) = L$. Równoważne
@@ -34,7 +36,7 @@ W tym rozdziale przedstawimy dowód tego twierdzenia oraz faktów pomocniczych.
 \label{sec:preparation}
 Niech $K = \overline{\Q}$ - domknięcie ciała liczb wymiernych, czyli zbiór
 wszystkich liczb algebraicznych.
-Niech $\xi$ to będzie dowolna liczba przestępna.
+Niech $\xi$ to będzie dowolną liczba przestępna.
 Potrzebujemy zdefiniować ciąg liczb przestępnych będących wynikiem kolejnych
 aplikacji liter tworzących słowo $w$ na $\xi$.
 W tym celu oznaczmy sobie możliwe elementy słowa $w$.
@@ -53,7 +55,7 @@ rozpatrzenie całych podsłów kończących się pierwiastkiem. Połączmy pods�
 $v_i$ w sylaby $s_1, \ldots, s_k$, gdzie każda sylaba jest postaci:
 $f_jr_{m_j}$, $f_j$ jest słowem wielomianowym a $m_j \geq 1$ dla
 $1 \leq j \leq k-1$. Zatem $w = \prod_{i=1}^k s_i$.
-Aby zachować proste oznaczenia pozwalamy na to by $f_1 = x$  i $s_k = f_k$, w
+Aby zachować prostotę oznaczenia pozwalamy na to by $f_1 = x$  i $s_k = f_k$, w
 tym przypadku będziemy przyjmowali, że $m_k = 0$.
 
 Podobnie jak w dla $\xi_i$ definiujemy ciąg $\left(\xi_i\right)$ jako
@@ -138,11 +140,21 @@ Oznaczmy $K\left(\mu_1, \mu_j\right)$ jako $K_j$.
       $K_1 \subsetneq K_2 \subsetneq \ldots \subsetneq K_{k+1}$ (ostatnie zawieranie jest
       równością, jeśli $m_k = 0$)
     \item{$H_3$:}
-      Jeśli $F$ jest prostym rozszerzeniem $K_1$ rzędu $p$  zawartym w $K_{k+1}$
+      Jeśli $F$ jest czystym rozszerzeniem $K_1$ rzędu $p$  zawartym w $K_{k+1}$
       to $F \subseteq K_2$.
   \end{description}
   \label{th:hypothesis_h}
 \end{theorem}
+
+\begin{corollary}
+  Rozszerzenie $K_{k+1}/K_1$ jest stopnia $p^m, m = \sum_{i=1}^k m_i$.
+\end{corollary}
+
+\begin{proof}
+  Wystarczy pokazać, że $\left[K_{j + 1} : K_j\right]
+  = m_j, 1 \leq j \leq k$. Reszta wynika z $H_2$.  Stopień pojedyńczego
+  rozszerzenia wynika wprost z lematu \ref{lem:root_extension}.
+\end{proof}
 
 Pokazaliśmy już jak z \ref{th:hypothesis_h} wynika
 
@@ -212,8 +224,9 @@ Załóżmy, że $H_1(n+1)$ nie zachodzi, tj. $K\left(\xi_1, \xi_{n+2}\right)$ ni
 zawiera się w $K\left(\xi_1, \xi_{n+1}\right)$. Wówczas $v_{n+1} = e_m$ i $m_k =
 0$.
 Naturalnie $\xi_{n+2} = v_{n+1}\left(\xi_{n+1}\right) \in
-K\left(\xi_{n+1}\right)$, czyli $K\left(\xi_1, \xi_{n+2}\right) \subset
-K\left(\xi_1, \xi_{n+1}\right)$.
+K\left(\xi_{n+1}\right)$, czyli 
+${K\left(\xi_1, \xi_{n+2}\right) \subsetneq
+K\left(\xi_1, \xi_{n+1}\right)}$.
 Zauważmy, że jeśli $\xi_2 \in K\left(\xi_1\right)$ to z ostatniego zawierania w
 \ref{eq:h_1_second} mamy:
 \[
@@ -223,17 +236,22 @@ Zauważmy, że jeśli $\xi_2 \in K\left(\xi_1\right)$ to z ostatniego zawierania
 K\left(\xi_1, \xi_{n+2}\right)\]
 Zatem musimy założyć, że $v_1 = r_{m_1}$.
 
-Będziemy chcieli, aby zachodziło $K\left(\xi_1, \xi_{n+2}\right) \cap
-K\left(\xi_1, \xi_2\right) = K\left(\xi_1\right)$. W tym celu podstawiamy pod
-$\xi_1 = \xi_2^{p^{m_1-1}}$ i $v_1 = r_1$. To podstawienie daje nam tę własność,
-gdyż $\xi_2 \not \in K\left(\xi_2^{p^{m_1}}\right)$ i stopień rozszerzenia
-$\left[K_2 : K_1\right] = p$. To podstawienie nie osłabia nam dowodzonej
-własności, gdyż jeśli oznaczymy podstawione $\xi_1$ jako $\xi_1^*$ to
-$K\left(\xi_1\right) \subseteq K\left(\xi_1^*\right)$.
-[TODO czemu tak chcemy?]
+W celu uniknięcia wprowadzania dodatkowych symboli będziemy chcieli, aby
+zachodziło 
+\begin{equation}
+K\left(\xi_1, \xi_{n+2}\right) \cap
+K\left(\xi_1, \xi_2\right) = K\left(\xi_1\right)
+\label{eq:h_1_start_simplification}
+\end{equation}
+W tym celu podstawiamy $\xi_1 = \xi_2^{p^{m_1-1}}$ i $v_1 = r_1$. To
+podstawienie daje nam \ref{eq:h_1_start_simplification}, gdyż $\xi_2 \not \in
+K\left(\xi_2^{p^{m_1}}\right)$ i stopień rozszerzenia $\left[K_2 : K_1\right] =
+p$. To podstawienie nie osłabia nam dowodzonej tezy $H_1(n+1)$, gdyż jeśli
+oznaczymy podstawione $\xi_1$ jako $\xi_1^*$ to $K\left(\xi_1\right) \subseteq
+K\left(\xi_1^*\right)$.
 
-Dodatkowo zauważmy, że
-$\xi_{n+2} \in K\left(\xi_{n+1}\right) \land \xi_{1} \in K\left(\xi_{2}\right)$.
+Zauważmy, że
+$\xi_{n+2} \in K\left(\xi_{n+1}\right)$ i $\xi_{1} \in K\left(\xi_{2}\right)$.
 Zatem z \ref{eq:h_1_first} i \ref{eq:h_1_second} mamy
 \[
   K\left(\xi_1, \xi_{n+1}\right) =
@@ -247,7 +265,7 @@ Używając sylab możemy zauważyć, że powyższe daje nam:
   K\left(\mu_2, \mu_{k+1}\right) =
   K\left(\mu_2, \mu_{k}\right)
 \]
-Jest to ciało, które ściśle zawiera $K_{k+1}$. Dodatkowo $K_{k+1} \cap K_2 =
+Jest to ciało, które właściwie zawiera $K_{k+1}$. Dodatkowo $K_{k+1} \cap K_2 =
 K_1$ i $K_k = K_{k+1}\left(\mu_2\right)$ jest czystym rozszerzeniem $K_{k+1}$.
 $K_j = K\left(\mu_2, \mu_j\right)$ dla $2 \leq j \leq k$, gdyż $\mu_1 \in
 K\left(\mu_2\right)$ i $\mu_2 \in K_j$. Zatem możemy zauważyć, że $\left[K_k :
@@ -275,10 +293,11 @@ Jeśli $l = 1$ to użycie $H_3(n)$ do podsłowa $\left(\mu_2, \mu_k\right)$ daje
 równość $\overline{K_3} = K_3$. Jeśli $l > 1$ to zauważmy, że jeśli $K_3 \cap
 \overline{K_3} = K_2$ to $K_2\left(\overline{\mu_3}^{p^{l-1}}\right)$ jest
 czystym rozszerzeniem $K\left(\mu_2\right)$ stopnia $p$ zawartym w $K_k$, ale
-nie w $K_3$. Sprzeczność. Jeśli $K_3 \cap \overline{K_3} \supset K_2$ to
-wystarczy odpowiednio dostosować $\mu_2$ i $l$ jak poprzednio.
+nie w $K_3$. Sprzeczność. Jeśli $K_2 \subsetneq K_3 \cap \overline{K_3}$ to
+wystarczy odpowiednio dostosować $\mu_2$ i $l$ jak poprzednio aby otrzymać
+$l=1$.
 
-Teraz z lematu TODO równość $K_2\left(\mu_3\right) =
+Teraz z lematu \ref{lem:associated_extensions} równość $K_2\left(\mu_3\right) =
 K_2\left(\overline{\mu_3}\right)$ implikuje, że dla pewnego $t$ ($p \not | t$)
 mamy $\mu_3\overline{\mu_3}^t \in K\left(\mu_2\right)$. Podnosząc to do
 $p^l$-tej potęgi i zastępując $\mu_2$ przez $x$ otrzymamy równanie
