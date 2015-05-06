@@ -168,16 +168,16 @@ $n$.
 Dla $n=1$ mamy:
 \begin{description}
   \item{$H_1$:}
+    $H_1(1)$ stwierdza, że
     $K\left(\xi_1\right) \subseteq K\left(\xi_1, \xi_2\right)$, co jest
     oczywiste.
   \item{$H_2$:} Dla $m_1 = 0$ ta hipoteza nic nie stwierdza. W przeciwnym
     wypadku ta hipoteza stwierdza, że $K\left(\xi_1\right) \subsetneq K\left(\xi_1,
     \xi_2\right)$. $\xi_2$ jest pierwiastkiem $\xi_1$ o stopniu podzielnym przez
     $p$, więc wykorzystując lemat \ref{lem:nontrivial_roots} i znany fakt
-    $K\left(\xi_1\right) \cong K[x]$ mamy, że $\xi_2 \not \in
+    $K\left(\xi_1\right) \cong K(x)$ mamy, że $\xi_2 \not \in
     K\left(\xi_1\right)$.
   \item{$H_3$:} Prawdziwe, bo $K_{k+1} = K_2$.
-
 \end{description}
 
 Zatem będziemy przyjmować, że $n \geq 2$. Ciąg wywodu będzie formować wg.
@@ -279,26 +279,24 @@ Możemy zdefiniować $K_{k+1}$-automorfizm $\tau$ ciała $K_k$, który przekszta
 $\mu_2$ na $\omega \mu_2$.
 Zauważmy, że $K_2 = K\left(\mu_2\right) = K\left(\omega \mu_2\right) =
 \overline{K_2}$.
-Niech $\overline{\mu_3} = \tau(\mu_3) \in K_k$ i niech druga sylaba $s_2$ słowa
-$w$ będzie postaci $fr_l$.
+Niech $\overline{\mu_3} = \tau(\mu_3) \in K_k$ i niech druga sylaba, $s_2$,
+słowa $w$ będzie postaci $fr_l$.
 Działanie $\tau$ na $\mu_3^{p^l} = f\left(\mu_2\right)$ daje
 $\overline{\mu_3}^{p^l} = f\left(\omega\mu_2\right)$. Zatem $K_3$ i
 $\overline{K_3} = K\left(\mu_2, \overline{\mu_3}\right)$ są czystymi
 rozszerzeniami stopnia $p_l$ ciała $K_2$ zawartego w $K_k$.
-
-[TODO, czemu $K_k$ jest równe $\overline{K_k}$? Jaka jest fundamentalna różnica
-między poprzednimi ciała, że takie coś zachodzi]
 
 Jeśli $l = 1$ to użycie $H_3(n)$ do podsłowa $\left(\mu_2, \mu_k\right)$ daje
 równość $\overline{K_3} = K_3$. Jeśli $l > 1$ to zauważmy, że jeśli $K_3 \cap
 \overline{K_3} = K_2$ to $K_2\left(\overline{\mu_3}^{p^{l-1}}\right)$ jest
 czystym rozszerzeniem $K\left(\mu_2\right)$ stopnia $p$ zawartym w $K_k$, ale
 nie w $K_3$. Sprzeczność. Jeśli $K_2 \subsetneq K_3 \cap \overline{K_3}$ to
-wystarczy odpowiednio dostosować $\mu_2$ i $l$ jak poprzednio aby otrzymać
-$l=1$.
+wystarczy odpowiednio dostosować $\mu_2$ i $l$ aby otrzymać równość
+$K_2 = K_3 \cap \overline{K_3}$.
 
 Teraz z lematu \ref{lem:associated_extensions} równość $K_2\left(\mu_3\right) =
-K_2\left(\overline{\mu_3}\right)$ implikuje, że dla pewnego $t$ ($p \not | t$)
+K_2\left(\overline{\mu_3}\right)$ implikuje, że dla pewnego $t$ 
+($p \!\! \not \! | \; t$)
 mamy $\mu_3\overline{\mu_3}^t \in K\left(\mu_2\right)$. Podnosząc to do
 $p^l$-tej potęgi i zastępując $\mu_2$ przez $x$ otrzymamy równanie
 \[ f(x)f^t(\omega x) = h^{p^l}(x)\]
