@@ -80,8 +80,8 @@ niemożliwości zachodzenia pewnej identyczności między wielomianiami.
 
 \begin{lemma}
   Niech $f$ będzie nietrywialnem słowem wielomianowym ($a_1, \ldots, a_n \neq
-  0$) i $\omega \; (\neq 1)$ będzie $p$-tym pierwiastkiem jedności w
-  $\overline{\Q}$.  Wówczas identyczność postaci
+  0, {q_n = 1,} {n \geq 2}$) i $\omega \; (\neq 1)$ będzie $p$-tym pierwiastkiem
+  jedności w $\overline{\Q}$.  Wówczas identyczność postaci
   \begin{equation}
     f(x)f^t(\omega x)g\left(x^p\right) = h^p(x)
     \label{eq:polynomial_lemma}
@@ -124,16 +124,23 @@ niemożliwości zachodzenia pewnej identyczności między wielomianiami.
   W każdym kroku skracamy mianownik z kolejnych dzielników zatem w końcu
   uzyskamy żądaną postać $g'\left(x^p \right) h'^p(x)$.
 
-  Niech $\alpha$ będzie jednokrotnym pierwiastkiem $f$. Wówczas każdy
-  pierwiastek $\beta$ wielomianu $\left(x + a_1\right)^{q_1} - \left(\alpha +
-  a_1\right)^{q_1}$ jest również jednokrotnym pierwiastkiem $f$. Tak jest, bo
-  wówczas $f_1(\beta) = f_1(\alpha)$, a $f_1(\alpha)$ jest jednokrotnym
-  pierwiastkiem $f \circ f_1^{-1}$.
+  Niech $\alpha$ będzie jednokrotnym pierwiastkiem $f$. Taki pierwiastek
+  istnieje z lematu \ref{lem:nontrivial_roots} ($f$~ma postać z założeń i brak
+  takiego pierwiastka oznacza, że $f$ jest $p$-tą potęgą pewnego wielomianu).
+  Wówczas każdy pierwiastek $\beta$ wielomianu $\left(x + a_1\right)^{q_1} -
+  \left(\alpha + a_1\right)^{q_1}$ jest również jednokrotnym pierwiastkiem $f$.
+  Tak jest, bo wówczas $f_1^{q_1}(\beta) = f_1^{q_1}(\alpha)$, a $f_1^{q_1}(\alpha)$ jest
+  jednokrotnym pierwiastkiem $f \circ \left(f_1^{q_1}\right)^{-1}$.
 
   Niech $f^*(x)$ będzie iloczynem czynników $(x-\alpha)$, gdzie $\alpha$ jest
   jednokrotnym pierwiastkiem $f$. Wówczas $f^*(x) = f_0 \left( \left(x + a_1
-  \right)^{q_1} \right)$ [TODO czemu wywalanie pierwiastków wielokrotnych nie
-  psuje nam tego?] dla pewnego wielomianu $f_0$.
+  \right)^{q_1} \right)$ dla pewnego wielomianu $f_0$. Aby to zauważyć
+  przedstawmy $f$ w postaci iloczynu czynników postaci
+  \[ f(x) = \prod_{i=1}^k \left(f_1^{q_1}(x) - a_i\right)^{s_i},
+  s_i = p^{r_i}, r_i \geq 0\]
+  gdzie $a_i$ są różne. Pierwiastki wielokrotne są dokładnie w czynnikach dla
+  których $s_i \neq 1$. Po ich odrzuceniu dostaniemy $f*(x)$.
+
 
   Jeśli $t=0$ to z lematu \ref{lem:multiplicity_lemma} dla pewnego wielomianu
   $g_0$
@@ -141,7 +148,7 @@ niemożliwości zachodzenia pewnej identyczności między wielomianiami.
    f^*(x) = f_0 \left(\left(x + a_1 \right)^{q_1} \right) = g_0 \left( x^p
   \right)
   \label{eq:polynomial_lemma_only_g}
-\end{equation}
+  \end{equation}
   Jeśli oznaczymy $N = \deg f^*$ to $f_0 \left(\left(x + a_1 \right)^{q_1}
   \right)$ musi mieć niezerowy współczynnik przy $x^{N-1}$, ale prawa strona z
   kolei nie może mięć niezerowego współczynnika przy $x^{N-1}$, bo $p$ wyznacza
@@ -196,28 +203,30 @@ niemożliwości zachodzenia pewnej identyczności między wielomianiami.
 \begin{lemma}{Lemat o związku między prostymi rozszerzeniami}
   Niech $E$ będzie podciałem ciała $\C$ i $\overline{\Q} \subseteq E$.
   Niech $p$ będzie nieparzystą liczbą pierwszą.
-  Niech $m, n \in \N$ takie, że $1 \leq m \leq n$ i $a, b \in E$ takie, że $x^p
+  Niech $n \in \N^+$ i $a, b \in E$ takie, że $x^p
   - a, x^p - b$ są nierozkładalne w $E$.
-  Jeśli dla pewnych rozwiązań $x^{p^m} - a, x^{p^n} -b$ mamy
-  $E\left(\sqrt[p^m]{a}\right) = E\left(\sqrt[p^n]{b}\right)$ to $ab^t =
-  c^{p^m}$ dla pewnego $c \in E$ i liczby całkowitej $t$ niepodzielnej przez
+  Jeśli dla pewnych rozwiązań $x^{p^n} - a, x^{p^n} -b$ mamy
+  $E\left(\! \sqrt[p^n]{a}\right) = E\left(\! \sqrt[p^n]{b}\right)$ to $ab^t =
+  c^{p^n}$ dla pewnego $c \in E$ i liczby całkowitej $t$ niepodzielnej przez
   $p$.
   \label{lem:associated_extensions}
 \end{lemma}
 \begin{proof}
-  Z \cite[Twierdzenie 14.2.8]{rom06} jeśli $x^{p^m} - a$ i $x^{p^n} - b$ są
+  Z \cite[Twierdzenie 14.2.8]{rom06} jeśli $x^{p^n} - a$ i $x^{p^n} - b$ są
   nierozkładalne to mają to samo rozszerzenie rozdzielcze nad $E$ wtedy i tylko
-  wtedy, gdy istnieje $c \in E$ i $t \in \Z$ niepodzielne przez $p$ takie, że
+  wtedy, gdy istnieją $c \in E$ i $t \in \Z$ niepodzielne przez $p$ takie, że
   $a = c^nb^t$.
-  Jako, iż $\overline{\Q} \subseteq E$ to jeśli $F$ rozszerzenie $E$ i $\alpha
-  \in F$  jest pierwiastkiem $x^{p^m} -a$ to jeśli $\omega$ jest pierwotnym
-  pierwiastkiem jedynki stopnia $p^m$ to $x - \omega^i \alpha, 0 \leq i \leq p^m
-  - 1$ są wszystkimi czynnikami $x^{p^m} - a$.
-  Wystarczy, więc pokazać, że $x^{p^m} - a$ i $x^{p^n} - b$ są nierozkładalne
-  aby otrzymać tezę lematu.
 
   Nierozkładalność obu wielomianów wynika z twierdzeń \ref{th:14_1_1},
-  \ref{th:14_1_2} i tego, że $x^p -a, x^p - b$ są nierozkładalne w $E$.
+  \ref{th:14_1_2}.
+
+  Pozostaje pokazać, że
+  $E\left(\! \sqrt[p^n]{a}\right) = E\left(\! \sqrt[p^n]{b}\right)$ są ciałami
+  rozdzielczymi tych wielomianów.
+  Jako, iż $\overline{\Q} \subseteq E$ to jeśli $F$ rozszerzenie $E$ i $\alpha
+  \in F$ jest pierwiastkiem $x^{p^n} -a$ to, dla $\omega$~-~pierwotny
+  pierwiastek jedynki stopnia $p^n$, wielomiany postaci $x - \omega^i \alpha, 0
+  \leq i \leq p^n - 1$ są wszystkimi czynnikami $x^{p^n} - a$.
 \end{proof}
 
 \begin{theorem}
