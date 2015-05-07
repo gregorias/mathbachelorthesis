@@ -338,7 +338,10 @@ K\left(\xi_2, \mu_{k}\right) \left(\xi_{1}\right)$ oba są rozszerzeniami
 $p$-tego stopnia i pierwsze ciało zawiera się w drugim.
 
 Niech końcówka słowa $w$ ma postać
-\[ w = \ldots g^{-1}r_lfr_1, l \geq 1\]
+\begin{equation}
+w = \ldots g^{-1}r_lfr_1, l \geq 1
+\label{eq:h_2_w_ending}
+\end{equation}
 $f, g$ są słowami wielomianowymi zaczynającymi się od translacji i $g^{-1}$
 oznacza odwrotność $g$. Niech $u = \left(s_1 \ldots s_{k-1}\right)^{-1}$. Jest
 jasne, że $u$ ma tę samą długość co $s_1\ldots s_{k-1}$ mniejszą od $n$ i kończy
@@ -372,7 +375,6 @@ otrzymamy
 
 Sprzeczność z lematem \ref{lem:main_polynomial_lemma}.
 
-
 \section{Dowód $H_3(n+1)$}
 Niech $F$ będzie prostym rozszerzeniem stopnia $p$ ciała $K_1$. Niech $F
 \subseteq K_{k+1}$ i $F \not \subseteq K_2$. Zakładamy, że $F \not \subseteq
@@ -381,33 +383,37 @@ Podobnie zakładamy, że $w$ kończy się pierwiastkiem $r_{m_k}, m_k \geq 1$.
 
 Niech $F_1 = F \left( \mu_k \right)$. $K_k \subseteq F_1$, gdyż $\mu_1, \mu_k
 \in F_1$. $F_1$ jest prostym rozszerzeniem $K_k$ stopnia $p$, gdyż
-
 \[
 \left[F_1:F\right]\left[F:K_1 \right] =
 \left[F_1:K_k\right]\left[K_k:K_1\right]
 \]
+i $\left[F_1:F\right] \leq \left[K_k:K_1\right]$ (przypominamy, że $F_1 =
+F\left(\mu_k\right), K_k = K_1\left(\mu_k\right)$ i $F_1 \supseteq K_k, F
+\supsetneq K_1$).
+Wiemy już z $H_1(n+1), H_2(n+1)$, że $K_{k+1}$ jest prostym rozszerzeniem $K_k$
+stopnia $p^{m^k}$, zatem $F_1 = K_k \left(\mu_{k+1}^{p^{m_k -1}} \right)$.
+Możemy $\mu_{k+1}$ dostosować tak by $m_k = 1$ i $F_1 = K_{k+1}$.
 
-i $\left[F_1:F\right] \leq \left[K_k:K_1\right]$. Wiemy już z $H_1(n+1),
-H_2(n+1)$, że $K_{k+1}$ jest prostym rozszerzeniem $K_k$ stopnia $p^{m^k}$,
-zatem $F_1 = K_k \left(\mu_{k+1}^{p^{m_k -1}} \right)$. Możemy $\mu_{k+1}$
-dostosować tak by $m_k = 1$ i $F_1 = K_{k+1}$.
-
-Zapisujemy końcówkę słowa $w$ podobnie jak w [TODO]. Niech $F_0 = F \left(
-\mu_{k-1} \right)$, podcialo $F_1$. Naturalnie $F_0 \supseteq K_{k-1}$ i
-podobnie jak w przypadku $F_1$: $\left[F_0:K_{k-1} \right] = p$. Z drugiej
-strony $\left[ K_{k+1} : K_{k-1} \right] = p^{l+1}$.
-Zatem $F_1 = F_0 \left(\mu_k \right)$ jest prostym rozszerzeniem $F_0$ o stopniu
-$p^l$ [TODO wyjaśnienie].
+Zapisujemy końcówkę słowa $w$ podobnie jak w \ref{eq:h_2_w_ending}. Niech $F_0 =
+F \left( \mu_{k-1} \right)$, podcialo $F_1$. Naturalnie $F_0 \supseteq K_{k-1}$
+i podobnie jak w przypadku $F_1$: $\left[F_0:K_{k-1} \right] = p$. Z drugiej
+strony $\left[ K_{k+1} : K_{k-1} \right] = p^{l+1}$.  Zatem $F_1 = F_0
+\left(\mu_k \right)$ jest prostym rozszerzeniem $F_0$ o stopniu $p^l$, gdyż
+\[
+  \left[K_{k+1} : F_0\right]\left[F_0:K_{k-1} \right] =
+  \left[F_{k+1}:K_k\right]\left[K_k:K_{k-1}\right]
+\]
 
 Niech, więc $\tau$ będzie $F_0$-automorfizmem ciała $K_{k+1}$, które odwzorowuje
 $\mu_k \rightarrow \omega \mu_k$, gdzie $\omega \neq 1$ jest $p$-tym
-pierwiastkiem jedności. Niech $\overline{\mu_{k+1}} = \tau \left( \mu_{k+1}
-\right) \in K_{k+1}$. Zatem $\overline{\mu}_{K+1}^p = f \left( \omega \mu_k
+pierwiastkiem jedności. Niech $\overline{\mu}_{k+1} = \tau \left( \mu_{k+1}
+\right) \in K_{k+1}$. Zatem $\overline{\mu}_{k+1}^p = f \left( \omega \mu_k
 \right) \in K \left( \mu_k \right)$.
 Zatem $K_k \left(\overline{\mu}_{k+1} \right)$ jest prostym rozszerzeniem $K_k$
-stopnia $p$ zawartym w $K_{k+1}$ zatem musi być identyczne z $K_{k+1}$.
+stopnia $p$ zawartym w $K_{k+1}$, więc musi być identyczne z $K_{k+1}$.
 
-Z [todo] istnieje $t$ takie, że $p \not | t$ i
+Z lematu \ref{lem:associated_extensions} istnieje $t$ takie, że 
+$p \! \not \!\, | \; t$ i
 $\mu_{k+1} \overline{\mu}_{k+1}^t \in K_k$. Dodatkowo
 \[ K \left( \mu_k, \mu_{k+1} \overline{\mu}_{k+1}^t \right)
   \subseteq
@@ -422,4 +428,15 @@ $K_k$. Podobnie jak w poprzedniej sekcji, aplikacja $H_3(n)$ do $u = \left(s_1
 \[ \mu_{k+1}\overline{\mu}^t_{k+1} \in K\left(\lambda_1, \lambda_2\right) =
 K\left(\mu_k, \lambda_2\right)\]
 
-[TODO]
+Niech $\left[K\left(\mu_k\right)\left(\lambda_2\right) :
+K\left(\mu_k\right)\right] = p^m$.
+Wówczas 
+$K\left(\mu_k\right)\left(\lambda_2^{p^{m-1}}\right)/K\left(\mu_k\right)$ jest
+prostym prozszerzeniem stopnia $p$ zawartym w $K_k$, czyli jest równe 
+$K \left( \mu_k, \mu_{k+1} \overline{\mu}_{k+1}^t \right)$.
+Mamy zatem dla pewnego $s$ niepodzielnego przez $p$:
+\[\mu_{k+1} \overline{\mu}_{k+1}^tv_2^s \in K\left(\mu_k\right)\]
+Wzięcie $p$-tych potęg i zastąpienie $\mu_k$ przez $x$ daje
+\[f(x)f^t(\omega x)g^s\left(x^{p^l}\right) = h^p(x)\]
+dla pewnego wielomianu $h$. Sprzeczność z lematem
+\ref{lem:main_polynomial_lemma}.
