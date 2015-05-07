@@ -2,21 +2,21 @@
 \label{ch:white_theorem}
 \section{Wstęp}
 
-Niech $p$ będzie dowolną nieparzystą liczbą pierwszą. Rozważmy permutacje $t :
-x \rightarrow  x+1$ i $e: x \rightarrow x^p$ zbioru liczb rzeczywistych. W 1986
-Samuel White \cite{whi88} udowodnił, że dla dowolnych liczb liczb całkowitych
+Niech $p$ będzie dowolną nieparzystą liczbą pierwszą. Rozważmy permutacje 
+${t : x \rightarrow  x+1}$ i~${e: x \rightarrow x^p}$ zbioru liczb
+rzeczywistych. W 1986 Samuel White \cite{whi88} udowodnił, że dla dowolnych
+liczb liczb całkowitych
 $a_1, \ldots, a_n, k_1, \ldots, k_n$, gdzie $a_2, \ldots, a_n, k_1, \ldots,
 k_{n-1}$ są niezerowe, odwzorowanie
 \begin{equation*}
   t^{a_1}e^{k_1}\ldots t^{a_n}e^{k_n}
 \end{equation*}
-nie jest identycznością. Istnieje taka liczba rzeczywista $x$, że dla $q_i$
-postaci $p^{k_i}$:
-\begin{equation}
+nie jest identycznością. To jest istnieje taka liczba rzeczywista $x$, że dla
+$q_i$ postaci $p^{k_i}$:
+\begin{equation*}
   \left( \ldots \left(\left(x + a_1\right)^{q_1} + a_2\right)^{q_2} +
     \ldots + a_n\right)^{q_n}
-\label{eq:gp_element}
-\end{equation}
+\end{equation*}
 nie jest równe $x$. Innymi słowy podgrupa $G_p = \langle t, e \rangle$ grupy
 $\Sigma_\R$ generowana przez $t, e$ jest wolna.
 
@@ -33,8 +33,8 @@ W tym celu oznaczmy sobie możliwe elementy słowa $w$.
 Niech $e_m: x \rightarrow x^{p^m}, m \geq 1$ a jej odwrotność to $r_m: x
 \rightarrow x^{\frac{1}{p^m}}, m \geq 1$.
 Translację oznaczymy jako $t_a: x \rightarrow x + a, a \in \N, a \neq 0$.
-Słowo $w$ będziemy czasem traktowali jako ciąg iloczyn postaci $w =
-v_1\ldots v_n$, gdzie $v_i$ to $t_a$, $e_m$, lub $r_m$.
+Słowo $w$~będziemy czasem traktowali jako iloczyn postaci $w =
+v_1\ldots v_n$, gdzie $v_i$ to $t_a$, $e_m$ lub $r_m$.
 
 Możemy teraz zdefiniować $n+1$-elementowy ciąg $\left(\xi_i\right)$ jako:
 \[\xi_1 = \xi, \xi_{j+1} = v_j\left(\xi_j\right), j \in \{1, \ldots, n\}\]
@@ -48,7 +48,7 @@ $1 \leq j \leq k-1$. Zatem $w = \prod_{i=1}^k s_i$.
 Aby zachować prostotę oznaczenia pozwalamy na to by $f_1 = x$  i $s_k = f_k$, w
 tym przypadku będziemy przyjmowali, że $m_k = 0$.
 
-Podobnie jak w dla $\xi_i$ definiujemy ciąg $\left(\xi_i\right)$ jako
+Podobnie jak w dla $\xi_i$ definiujemy ciąg $\left(\mu_i\right)$ jako
 \[\mu_1 = \xi_1 = \xi, \mu_{j+1} = s_j\left(\mu_j\right)\]
 dla $1 \leq j \leq k$. Wówczas $\mu_{k+1} = \xi_{n+1} = w(\xi)$.
 
@@ -88,7 +88,7 @@ K\left(\xi_1, \xi_{n+1}\right)
 Jeśli $s_k$ nie kończy się pierwiastkiem to ostatnie zawieranie właściwe nie
 zachodzi.
 
-Załóżmy, że \ref{eq:tower} zostało udowodnione. Z tego ciągu wynika nierówność
+Załóżmy, że \ref{eq:tower} zostało udowodnione. Z tej wieży wynika nierówność
 $w\left(\xi\right) \neq \xi$. Aby to zauważyć wystarczy rozważyć dwa przypadki.
 Jeśli wśród $v_i$ nie ma pierwiastków to $w$ jest wielomianem nad $\Q$. Wówczas
 $w(\xi) = \xi$ jest sprzeczne z przestępnością $\xi$ zatem $w(\xi) \neq \xi$.
@@ -103,10 +103,10 @@ Dowód obu własności zostanie przeprowadzony indukcyjne. Dodatkowo będziemy
 potrzebować jeszcze trzeciej własności, którą będziemy dowodzić równocześnie z
 obiema powyższymi. Zauważmy, że $\mu_2^{p^{m_1}} = f_1\left(\mu_1\right)$.
 Zatem $K\left(\mu_1\right)\left(\sqrt[p]{f_1\left(\mu_1\right)}\right)$ jest
-rozszerzeniem prostym $K\left(\mu_1\right)$ o stopniu $p$.
+rozszerzeniem $K\left(\mu_1\right)$ o stopniu $p$.
 To rozszerzenie jest zawarte w $K\left(\mu_1, \mu_2\right)$ i
 $K\left(\mu_1, \mu_{k+1}\right)$.
-Czy może istnieć inne proste rozszerzenie stopnia $p$, które zawiera się w
+Czy może istnieć inne rozszerzenie stopnia $p$, które zawiera się w
 $K\left(\mu_1, \mu_{k+1}\right)$, ale nie zawiera się w $K\left(\mu_1,
 \mu_2\right)$? Okazuje się, że nie.
 
@@ -130,7 +130,7 @@ Oznaczmy $K\left(\mu_1, \mu_j\right)$ jako $K_j$.
       $K_1 \subsetneq K_2 \subsetneq \ldots \subsetneq K_{k+1}$ (ostatnie zawieranie jest
       równością, jeśli $m_k = 0$)
     \item{$H_3$:}
-      Jeśli $F$ jest prostym rozszerzeniem $K_1$ rzędu $p$  zawartym w $K_{k+1}$
+      Jeśli $F$ jest rozszerzeniem $K_1$ rzędu $p$ zawartym w $K_{k+1}$
       to $F \subseteq K_2$.
   \end{description}
   \label{th:hypothesis_h}
