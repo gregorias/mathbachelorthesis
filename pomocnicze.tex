@@ -16,13 +16,14 @@ Załóżmy przeciwnie.
 Jeśli $w(x) = \frac{m(x)}{n(x)}$, gdzie $m(x), n(x) \in \overline{\Q}[x], \deg
 n(x) \neq 0$ i jest to ułamek nieskracalny, to w równaniu: $f(x)^{p} + a =
 \frac{m(x)^p}{n(x)^p}$ po lewej stronie mamy wielomian. Zatem $n(x)^p | m(x)^p$,
-ale założyliśmy, ze $n(x) \! \not| m(x)$. Sprzeczność.
+ale założyliśmy, ze $n(x) \! \! \not| \, m(x)$. Sprzeczność.
 
 Zatem $w(x) = g(x), g(x) \in \overline{\Q}[x]$. Mamy:
 \begin{eqnarray*}
   f(x)^p + a &=& g(x)^p \\
   a &=& g(x)^p - f(x)^p\\
-  a &=& \left(g(x) - f(x)\right)\left(\sum_{i=0}^{p-1}g(x)^if(x)^{p-1 - i}\right)\\
+  a &=& \left(g(x) - f(x)\right)\left(\sum_{i=0}^{p-1}g(x)^if(x)^{p-1 -
+  i}\right)\\
 \end{eqnarray*}
 
 Możemy założyć, że $f(x)$ jest wielomianem monicznym. Z końcowego równania $g(x)
@@ -45,8 +46,8 @@ Sprzeczność.
 \end{defin}
 
 Nazwa słowo wielomianowe bierze się stąd, że ten wielomian można przedstawić w
-postaci iloczynu $t^{a_1}e_p^{k_1} \ldots t^{a_n}e_p^{k_n}$, gdzie $t, e_p \in
-\Sigma_{\R}, t(x) = x + 1, e_p(x) = x^p$. W rozdziale \ref{ch:white_theorem}
+postaci iloczynu $t^{a_1}e^{k_1} \ldots t^{a_n}e^{k_n}$, gdzie $t, e \in
+\Sigma_{\R}, t(x) = x + 1, e(x) = x^p$. W rozdziale \ref{ch:white_theorem}
 pokażemy, że jest to grupa wolna zatem ta reprezentacja stanowi słowo
 zredukowane.
 
@@ -74,10 +75,13 @@ pierwiastek $f$ jest również i ich pierwiastkiem. Wówczas stopień tego
 pierwiastka to $\prod_{i=1}^s q_{j_i}$.
 \end{proof}
 
+Kluczowym lematem w dowodzie głównego twierdzenia jest poniższy lemat o
+niemożliwości zachodzenia pewnej identyczności między wielomianiami.
+
 \begin{lemma}
-  Niech $f$ będzie słowem wielomianowym ($a_1, \ldots, a_{l+1} \neq 0$) i
-  $\omega$ ($\neq 1$) będzie $p$-tym pierwiastkiem jedności w $\overline{\Q}$.
-  Wówczas identyczność postaci
+  Niech $f$ będzie nietrywialnem słowem wielomianowym ($a_1, \ldots, a_n \neq
+  0$) i $\omega \; (\neq 1)$ będzie $p$-tym pierwiastkiem jedności w
+  $\overline{\Q}$.  Wówczas identyczność postaci
   \begin{equation}
     f(x)f^t(\omega x)g\left(x^p\right) = h^p(x)
     \label{eq:polynomial_lemma}
@@ -87,11 +91,9 @@ pierwiastka to $\prod_{i=1}^s q_{j_i}$.
   \label{lem:main_polynomial_lemma}
 \end{lemma}
 
-[TODO dodaj wyjaśnienie czemu to twierdzenie jest pożyteczne]
-
 \begin{proof}
-  Jeśli \ref{eq:polynomial_lemma} zachodzi to możemy założyć, że $0 \leq t \leq p - 1$
-  poprzez włączenie $f^p(\omega x)$ do $h^p(x)$.
+  Jeśli \ref{eq:polynomial_lemma} zachodzi to możemy założyć, że $0 \leq t \leq
+  p - 1$ poprzez włączenie czynników postaci $f^p(\omega x)$ do $h^p(x)$.
 
   Dodatkowo istnieją $g'(x), h'(x) \in \overline{\Q}[x]$ takie, że
   \begin{equation}
@@ -104,18 +106,18 @@ pierwiastka to $\prod_{i=1}^s q_{j_i}$.
   h^p(x)$. Wielomiany $g', h'$ można skonstruować indukcyjnie następującą
   metodą. Niech dany będzie wielomian postaci
   $\frac{n_l \left( x^p \right) m^p(x)}{n_m \left( x^p \right)}$, gdzie $n_l,
-  n_m, m$ to wielomiany w $\overline{\Q}$. Zauważmy, że $x^p - a$ ma wszystkie
-  $p$ pierwiastków różne i dla różnych $a$ te wielomiany nie mają wspólnych
+  n_m, m$ to wielomiany nad $\overline{\Q}$. Zauważmy, że $x^p - a$ ma wszystkie
+  $p$ pierwiastki różne i dla różnych $a$ te wielomiany nie mają wspólnych
   pierwiastków. Jeśli $n_m \equiv 1$ to nic nie robimy, bo wtedy $g' = n_l, h' =
   m$.
-  Jeśli $\left(x^p - a \right) | n_m \left(x^p\right)$ i $\left(x^p - a \right)
-  | n_l \left(x^p\right)$ to bierzemy
+  Jeśli $\left(x^p - a \right) | \, n_m \left(x^p\right)$ i $\left(x^p - a
+  \right) | \, n_l \left(x^p\right)$ to bierzemy
   $n_l' = \frac{n_l(x)}{x^p - a}, n_m' = \frac{n_m(x)}{x^p - a}$ i w kolejnym
   kroku podstawiamy te skrócone wielomiany.
   W przeciwnym wypadku
-  $\left(x^p - a \right) | n_m \left(x^p \right)$ i
-  $\left(x^p - a \right) | h^p \left(x \right)$. Wszystkie pierwiastki
-  $\left(x^p - a \right)$ są różne zatem $\left(x^p - a \right) | h(x)$.
+  $\left(x^p - a \right) | \, n_m \left(x^p \right)$ i
+  $\left(x^p - a \right) | \, h^p \left(x \right)$. Wszystkie pierwiastki
+  $\left(x^p - a \right)$ są różne zatem $\left(x^p - a \right) | \, h(x)$.
   Bierzemy zatem:
   $n_l' = n_l(x)\left(x^p - a \right)^{p-1}, n_m' = \frac{n_m(x)}{x^p -
   a}, h' = \frac{h(x)}{x^p - a}$.
@@ -157,16 +159,13 @@ pierwiastka to $\prod_{i=1}^s q_{j_i}$.
     m_0 + tm_{p-1} &\equiv m_1 + tm_0 \pmod{p}\\
     m_1 + tm_{0} &\equiv m_2 + tm_1 \pmod{p}\\
                  &\mathrel{\makebox[\widthof{=}]{\vdots}}\\
-    m_{p-2} + tm_{p-3} &\equiv m_{p-1} + tm_{p-2} \pmod{p}\\
+    m_{p-2} + tm_{p-3} &\equiv m_{p-1} + tm_{p-2} \pmod{p}
   \end{align*}
-
   Zatem $\sum_{i=0}^{p-1} m_i \equiv 0 \pmod{p}$ lub $t \equiv p-1 \pmod{p}$. Z
   obu wynika, że $\forall_{0 \leq i \leq p-1} m_i = 1$. Wówczas $f(x) = f(\omega
   x)$, czyli $\left( f^*(x) \right)^t = g_0 \left( x^p \right)$ co jest
   niemożliwe używając analogicznego argumentu co przy
   \ref{eq:polynomial_lemma_only_g}.
-
-
 \end{proof}
 
 \section{Lematy i twierdzenia o rozszerzeniach ciał}
