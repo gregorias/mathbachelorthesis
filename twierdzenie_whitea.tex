@@ -210,8 +210,8 @@ Z $H_1(n)$ zaaplikowanego do $\left(\xi_1, \xi_{n+1}\right)$ oraz $\left(\xi_2,
   \label{eq:h_1_second}
 \end{equation}
 
-Załóżmy, że $H_1(n+1)$ nie zachodzi, tj. $K\left(\xi_1, \xi_{n+2}\right)$ nie
-zawiera się w $K\left(\xi_1, \xi_{n+1}\right)$. Wówczas $v_{n+1} = e_m$ i $m_k =
+Załóżmy, że $H_1(n+1)$ nie zachodzi, tj. $K\left(\xi_1, \xi_{n+1}\right)$ nie
+zawiera się w $K\left(\xi_1, \xi_{n+2}\right)$. Wówczas $v_{n+1} = e_m$ i $m_k =
 0$.
 Naturalnie $\xi_{n+2} = v_{n+1}\left(\xi_{n+1}\right) \in
 K\left(\xi_{n+1}\right)$, czyli 
@@ -224,7 +224,8 @@ Zauważmy, że jeśli $\xi_2 \in K\left(\xi_1\right)$ to z ostatniego zawierania
   K\left(\xi_2, \xi_{n+1}\right)\left(\xi_1\right) \subseteq
   K\left(\xi_2, \xi_{n+2}\right)\left(\xi_1\right) =
 K\left(\xi_1, \xi_{n+2}\right)\]
-Zatem musimy założyć, że $v_1 = r_{m_1}$.
+Zatem musimy założyć, że $v_1 = r_{m_1}$ aby mieć $\xi_2 \not \in
+K\left(\xi_1\right)$.
 
 W celu uniknięcia wprowadzania dodatkowych symboli będziemy chcieli, aby
 zachodziło 
@@ -234,9 +235,9 @@ K\left(\xi_1, \xi_2\right) = K\left(\xi_1\right)
 \label{eq:h_1_start_simplification}
 \end{equation}
 W tym celu podstawiamy $\xi_1^* = \xi_2^{p^{m_1-1}}$ i $v_1^* = r_1$. To
-podstawienie daje nam \ref{eq:h_1_start_simplification}, gdyż $\xi_2 \not \in
-K\left(\sqrt[p]{\xi_2}\right)$ i stopień rozszerzenia $\left[K_2 : K_1\right] =
-p$. To podstawienie nie osłabia nam dowodzonej tezy $H_1(n+1)$, gdyż
+podstawienie daje nam \ref{eq:h_1_start_simplification}, gdyż
+$\left[K\left(\xi_1^*, \xi_2\right):K\left(\xi_1^*\right)\right] = p$.
+To podstawienie nie osłabia nam dowodzonej tezy $H_1(n+1)$, gdyż
 $K\left(\xi_1\right) \subseteq K\left(\xi_1^*\right)$. Od teraz traktujemy
 $\xi_1$ jako $\xi_1^*$ i $v_1$ jako $v_1^*$.
 
@@ -249,27 +250,28 @@ Zatem z \ref{eq:h_1_first} i \ref{eq:h_1_second}
   K\left(\xi_2, \xi_{n+1}\right)
 \]
 
-Używając sylab możemy zauważyć, że powyższe daje
+Używając sylab powyższe daje
 \[
   K\left(\mu_1, \mu_{k}\right) =
   K\left(\mu_2, \mu_{k+1}\right) =
   K\left(\mu_2, \mu_{k}\right)
 \]
 Jest to ciało, które właściwie zawiera $K_{k+1}$. Dodatkowo $K_{k+1} \cap K_2 =
-K_1$ i $K_k = K_{k+1}\left(\mu_2\right)$ jest prostym rozszerzeniem $K_{k+1}$.
+K_1$ i $K_k = K_{k+1}\left(\mu_2\right)$ jest pojedynczym rozszerzeniem
+$K_{k+1}$.
 $K_j = K\left(\mu_2, \mu_j\right)$ dla $2 \leq j \leq k$, gdyż $\mu_1 \in
 K\left(\mu_2\right)$ i $\mu_2 \in K_j$.
 Z tego, że $\mu_1 \in K_k, \mu_2 = \sqrt[p]{\mu_1}$ możemy zauważyć, że
 $\left[K_k : K_{k+1}\right] = p$.
 
-Załóżmy teraz, że $k \geq 3$. $K_{k+1}$ jest rozszerzeniem $K_1$ zawartym w
-$K_k$, ale to rozszerzenie niekoniecznie jest proste.
+Będziemy chcieli pokazać, że $k$ musi być małe. Załóżmy , że $k \geq 3$.
 
 Niech $\omega \neq 1$ będzie $p$-tym pierwiastkiem jedności zawartym w $K_k$.
 Możemy zdefiniować $K_{k+1}$-automorfizm $\tau$ ciała $K_k$, który przekształca
 $\mu_2$ na $\omega \mu_2$.
-Zauważmy, że $K_2 = K\left(\mu_2\right) = K\left(\omega \mu_2\right) =
-\overline{K_2}$.
+Zauważmy, że 
+\[K_2 = K\left(\mu_2\right) \cong K\left(\omega \mu_2\right) =
+\overline{K_2}\]
 Niech $\overline{\mu_3} = \tau(\mu_3) \in K_k$ i niech druga sylaba, $s_2$,
 słowa $w$ będzie postaci $fr_l$.
 Działanie $\tau$ na $\mu_3^{p^l} = f\left(\mu_2\right)$ daje
