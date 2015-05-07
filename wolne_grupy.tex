@@ -1,15 +1,15 @@
 \chapter{Grupy wolne}
 \label{ch:free_groups}
 Podstawową ideą stojąca za pojęciem grupy wolnej $F(S)$ generowanej przez zbiór
-$S$ jest to, że nie ma istnieje żadna nietrywialna relacja między elementami $S$
-w tej grupie. Nie istnieją, żaden nietrywialny sposób uproszczenia ciągu
-operacji na $S$. Formalne wolną grupę definiujemy następująco:
+$S$ jest to, że nie istnieje żadna nietrywialna relacja między elementami $S$ w
+tej grupie. Nie istnieje żaden nietrywialny sposób uproszczenia ciągu operacji
+na $S$. Formalne grupę wolną definiujemy następująco:
 
 \begin{defin}[Uniwersalna własność grup wolnych]
-  Niech $S$ będzie zbiorem a $F$ grupą wolną taką, że istnieje odwzorowanie
-  $\iota: S \rightarrow F$. $F$ nazywa się wolną grupą generowaną przez zbiór
-  $S$ jeśli dla każdej grupy $G$ i odwzorowania $\rho: S \rightarrow F$ istnieje
-  dokładnie jeden homomorfizm $\phi: F \rightarrow G$ taki, że:
+  Niech $S$ będzie zbiorem a $F$ grupą taką, że istnieje odwzorowanie $\iota: S
+  \rightarrow F$. $F$ nazywa się grupą wolną generowaną przez zbiór $S$ jeśli
+  dla każdej grupy $G$ i odwzorowania $\rho: S \rightarrow F$ istnieje dokładnie
+  jeden homomorfizm $\phi: F \rightarrow G$ taki, że:
 
   \begin{equation}
   \forall_{s \in S} \,\rho(s) = (\phi \circ \iota) (s)
@@ -72,7 +72,7 @@ elementy $s_i$.
 
   \[(s_1, s_2, \ldots)\]
 
-  takich, że $s_i \in S \cup S^{-1} \cup {1}, s_i = 1$ for dostatecznie dużych
+  takich, że $s_i \in S \cup S^{-1} \cup \{1\}, s_i = 1$ for dostatecznie dużych
   $i$ oraz
 
 \begin{enumerate}
@@ -95,16 +95,15 @@ $s_1^{\epsilon_1}\ldots s_n^{\epsilon_n}$
   redukujących się symboli, tj. ciągów postaci $ss^{-1}$. Formalnie niech:
   $s = s_1^{\epsilon_1}\ldots s_n^{\epsilon_n}, p = p_1^{\epsilon_1}\ldots
   p_m^{\epsilon_n} \in F(S)$, $s_i, p_j \neq 1$ i $k \in \N$ jest takim
-  indeksem, że:
+  największym takim indeksem, że:
 
-  \[\forall_{l \leq k} s_{n - l + 1}^{\epsilon_{n - l + 1}} =
+  \[\forall_{l \leq k} \; s_{n - l + 1}^{\epsilon_{n - l + 1}} =
     p_l^{-\epsilon_l}\]
 
-  \[\forall_{l > k} s_{n - l + 1}^{\epsilon_{n - l + 1}}
-    \neq p_l^{-\epsilon_l}\]
-
   Wówczas $s \cdot p = s_1^{\epsilon_1}\ldots s_{n -
-  k}^{\epsilon_{n-k}}p_{k+1}^{\epsilon_{k+1}}\ldots p_{m}^{\epsilon_m}$
+  k}^{\epsilon_{n-k}}p_{k+1}^{\epsilon_{k+1}}\ldots p_{m}^{\epsilon_m}$. Jeśli
+  $k$ jest równe długości któregoś ze słów to w powyższej definicji to słowo
+  redukuje się do $1$.
 
   Iniekcję $\iota$ z definicji \ref{def:universal_property} definiujemy w
   następujący sposób: $\iota: S \rightarrow F(S), \iota(s) = s$.
@@ -124,7 +123,7 @@ $s_1^{\epsilon_1}\ldots s_n^{\epsilon_n}$
   $\cdot$ jest operacją łączną. Dowód tej własności można przeprowadzić
   indukcyjnie, tutaj jednak użyję innego rozumowania.
 
-  Zdefiniujmy $\sigma_s: F(S) \rightarrow F(S), s \in S \cup S^{-1} \cup \{1\}$.
+  Zdefiniujmy $\sigma_s: F(S) \rightarrow F(S), s \in S \cup S^{-1} \cup \{1\}$,
   jako $\sigma_s(a) = \iota(s) \cdot a$. $\sigma_{s^{-1}} \circ \sigma_{s}$ jest
   identycznością zatem $\sigma_{s}$ jest permutacją na $F(S)$. Niech
   $A(S) = \left\langle \sigma_s : s \in S \cup S^{-1} \cup \{1\}\right\rangle$
@@ -152,7 +151,7 @@ $s_1^{\epsilon_1}\ldots s_n^{\epsilon_n}$
 \end{proof}
 
 \section{Unikalność grup wolnych}
-Grupa słów zredukowanych jest utożsamiania z pojęciem grupy wolnej nad $S$ z
+Grupa słów zredukowanych jest utożsamiana z pojęciem grupy wolnej nad $S$ z
 powodu następującego twierdzenia.
 
 \begin{theorem}
