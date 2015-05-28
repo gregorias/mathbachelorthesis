@@ -3,7 +3,8 @@
 Podstawową ideą stojąca za pojęciem grupy wolnej $F(S)$ generowanej przez zbiór
 $S$ jest to, że nie istnieje żadna nietrywialna relacja między elementami $S$ w
 tej grupie. Nie istnieje żaden nietrywialny sposób uproszczenia ciągu operacji
-na $S$. Formalne grupę wolną definiujemy następująco:
+na $S$.
+Formalnie grupę wolną definiujemy następująco:
 
 \begin{defin}[Uniwersalna własność grup wolnych]
   Niech $S$ będzie zbiorem a $F$ grupą taką, że istnieje odwzorowanie $\iota: S
@@ -48,11 +49,12 @@ generuje $F$.
   $F = \langle \iota(S)\rangle$.
 \end{proof}
 
-\subsubsection{Definicja konstrukcyjna}
-Mając dany zbiór $S$ jest możliwe skonstruowanie wolnej grupy $F(S)$ generowanej
-przez ten zbiór. Kluczowym pomysłem jest tutaj fakt, że elementy $F(S)$ muszą w
-pewien sposób zakodować operacje użyte do wygenerowania podgrupy
-$\langle \rho(S) \rangle$, ponieważ dla przykładu
+\subsubsection{Dowód istnienia grupy wolnej generowanej przez zbiór $S$}
+Mając dany zbiór $S$ możliwe jest skonstruowanie grupy wolnej $F(S)$ generowanej
+przez ten zbiór.
+Kluczowym pomysłem jest tutaj fakt, że elementy $F(S)$ muszą w pewien sposób
+zakodować operacje użyte do wygenerowania podgrupy $\langle \rho(S) \rangle$,
+ponieważ dla przykładu
 
 \[
 \phi\left(\iota\left(s_1\right) \ldots \iota\left(s_n\right)\right)
@@ -65,10 +67,12 @@ To powinno być możliwe dla każdej grupy $G$ dlatego potrzebujemy słów koduj
 elementy $s_i$.
 
 \begin{defin}[Zbiór słów zredukowanych]
-  Niech $S^{-1}$ będzie zbiorem elementów odwrotnych do $S$ takim, że $S \cap
-  S^{-1} = \emptyset$ i istnieje bijekcja między $S$ i $S^{-1}$. Załóżmy
-  dodatkowo, że $1 \not \in S \cup S^{-1}$ i $1^{-1} = 1$.  Zbiorem słów
-  zredukowanych $F(S)$ jest zbiór nieskończonych ciągów postaci:
+  Niech $S^{-1}$ będzie zbiorem takim, że $S \cap S^{-1} = \emptyset$ i istnieje
+  bijekcja między $S$ i $S^{-1}$.
+  Element zbioru $S^{-1}$ odpowiadający w tej bijekcji elementowi $s \in S$
+  oznaczamy przez $s^{-1}$ i nazywamy elementem odwrotnym do $s$.
+  Załóżmy dodatkowo, że $1 \not \in S \cup S^{-1}$ i $1^{-1} = 1$.
+  Zbiorem słów zredukowanych $F(S)$ jest zbiór nieskończonych ciągów postaci:
 
   \[(s_1, s_2, \ldots)\]
 
@@ -81,13 +85,14 @@ elementy $s_i$.
 \end{enumerate}
 \end{defin}
 
-Słowo $(1,1,\ldots)$ nazywamy słowem pustym i oznaczamy symbolem $1$.
+Słowo $(1,1,\ldots)$ nazywamy słowem pustym i będziemy oznaczać symbolem $1$.
 
-Będziemy oznaczali słowo $
+Słowo zredukowane $
 (s_1^{\epsilon_1},
-s_2^{\epsilon_2}, \ldots
-s_n^{\epsilon_n}, 1, 1, \ldots)$, gdzie $\epsilon_i \in \{-1, 1\}$ jako:
-$s_1^{\epsilon_1}\ldots s_n^{\epsilon_n}$
+s_2^{\epsilon_2}, \ldots,
+s_n^{\epsilon_n}, 1, 1, \ldots)$,
+gdzie $\epsilon_i \in \{-1, 1\}$ będziemy oznaczać napisem
+$s_1^{\epsilon_1}\ldots s_n^{\epsilon_n}$.
 
 \begin{defin}[Grupa wolna generowana przez zbiór]
   Grupą wolną generowaną przez zbiór $S$ nazywamy zbiór słów zredukowanych
@@ -112,7 +117,7 @@ $s_1^{\epsilon_1}\ldots s_n^{\epsilon_n}$
 
 \begin{theorem}
   Grupa $F(S)$ z definicji \ref{def:generated_free_group} jest rzeczywiście grupą
-  i dodatkowo jest wolną grupą generowaną przez $S$.
+  i dodatkowo jest grupą wolną generowaną przez $S$.
 \end{theorem}
 \begin{proof}
   Z definicji działania grupowego: $1 \cdot s = s \cdot 1 = s$ oraz
@@ -137,8 +142,9 @@ $s_1^{\epsilon_1}\ldots s_n^{\epsilon_n}$
     \sigma_{s_n^{\epsilon_n}}
   \]
 
-  jest bijekcją z $F(S)$ do $A(S)$ która zachowuje działanie grupowe obu zbiorów.
-  Zatem, ponieważ działanie w $A(S)$ jest łączne zatem działanie $\cdot$ w
+  jest bijekcją z $F(S)$ do $A(S)$ która zachowuje działanie grupowe obu
+  zbiorów.
+  Ponieważ działanie w $A(S)$ jest łączne zatem działanie $\cdot$ w
   $F(S)$ też musi być.
 
   Aby udowodnić wolność niech $G$ będzie dowolną grupą i $\rho: S \rightarrow G$

@@ -1,12 +1,15 @@
 \chapter{Pomocnicze lematy i twierdzenia}
 \label{ch:auxiliary}
 \section{Nietrywialne pierwiastki wielomianów nie należą do $\overline{\Q}(x)$}
+Symbolem $\overline{\Q}$ będziemy oznaczali algebraiczne domknięcie ciała liczb
+wymiernych.
 \begin{lemma}
   Niech $a \in \overline{\Q}, a \neq 0, f(x) \in \overline{\Q}[x], \deg f(x)
-  \neq 0$ i $p \in \N$ pierwsza.  Wówczas nie istnieje taka funkcja wymierna
-  $w(x) \in \overline{\Q}(x)$, że $f(x)^{p} + a = w(x)^p$. Innymi słowy
-  wielomiany niebędące trywialnie $p$-tymi potęgami nie posiadają $p$-tego
-  pierwiastka w ciele funkcji wymiernych.
+  \neq 0$ i $p \in \N$ pierwsza.
+  Wówczas nie istnieje taka funkcja wymierna $w(x) \in \overline{\Q}(x)$, że
+  $f(x)^{p} + a = w(x)^p$.
+  Innymi słowy wielomiany niebędące trywialnie $p$-tymi potęgami nie posiadają
+  $p$-tego pierwiastka w ciele funkcji wymiernych.
   \label{lem:nontrivial_roots}
 \end{lemma}
 
@@ -26,9 +29,11 @@ Zatem $w(x) = g(x), g(x) \in \overline{\Q}[x]$. Mamy:
   i}\right)\\
 \end{eqnarray*}
 
-Możemy założyć, że $f(x)$ jest wielomianem monicznym. Z końcowego równania $g(x)
-- f(x)$ dzieli $a$, zatem $g, f$ są tego samego stopnia. Zatem w prawym
-czynniku mamy wielomian stopnia $(p-1)\deg g(x)$ co jest większe od zera.
+Możemy założyć, że $f(x)$ jest wielomianem unormowanym.
+Z końcowego równania $g(x) - f(x)$ dzieli $a$, zatem $g, f$ są tego samego
+stopnia.
+Zatem w prawym czynniku mamy wielomian stopnia $(p-1)\deg g(x)$ co jest większe
+od zera.
 Sprzeczność.
 \end{proof}
 
@@ -76,12 +81,13 @@ pierwiastka to $\prod_{i=1}^s q_{j_i}$.
 \end{proof}
 
 Kluczowym lematem w dowodzie głównego twierdzenia jest poniższy lemat o
-niemożliwości zachodzenia pewnej identyczności między wielomianiami.
+niemożliwości zachodzenia pewnej identyczności między wielomianami.
 
 \begin{lemma}
-  Niech $f$ będzie nietrywialnem słowem wielomianowym ($a_1, \ldots, a_n \neq
+  Niech $f$ będzie nietrywialnym słowem wielomianowym ($a_1, \ldots, a_n \neq
   0, {q_n = 1,} {n \geq 2}$) i $\omega \; (\neq 1)$ będzie $p$-tym pierwiastkiem
-  jedności w $\overline{\Q}$.  Wówczas identyczność postaci
+  z jedności w $\overline{\Q}$.
+  Wówczas identyczność postaci
   \begin{equation}
     f(x)f^t(\omega x)g\left(x^p\right) = h^p(x)
     \label{eq:polynomial_lemma}
@@ -107,7 +113,7 @@ niemożliwości zachodzenia pewnej identyczności między wielomianiami.
   metodą. Niech dany będzie wielomian postaci
   $\frac{n_l \left( x^p \right) m^p(x)}{n_m \left( x^p \right)}$, gdzie $n_l,
   n_m, m$ to wielomiany nad $\overline{\Q}$. Zauważmy, że $x^p - a$ ma wszystkie
-  $p$ pierwiastki różne i dla różnych $a$ te wielomiany nie mają wspólnych
+  $p$ pierwiastków różnych i dla różnych $a$ te wielomiany nie mają wspólnych
   pierwiastków. Jeśli $n_m \equiv 1$ to nic nie robimy, bo wtedy $g' = n_l, h' =
   m$.
   Jeśli $\left(x^p - a \right) | \, n_m \left(x^p\right)$ i $\left(x^p - a
@@ -139,7 +145,7 @@ niemożliwości zachodzenia pewnej identyczności między wielomianiami.
   \[ f(x) = \prod_{i=1}^k \left(f_1^{q_1}(x) - a_i\right)^{s_i},
   s_i = p^{r_i}, r_i \geq 0\]
   gdzie $a_i$ są różne. Pierwiastki wielokrotne są dokładnie w czynnikach dla
-  których $s_i \neq 1$. Po ich odrzuceniu dostaniemy $f*(x)$.
+  których $s_i \neq 1$. Po ich odrzuceniu dostaniemy $f^*(x)$.
 
 
   Jeśli $t=0$ to z lematu \ref{lem:multiplicity_lemma} dla pewnego wielomianu
@@ -177,7 +183,7 @@ niemożliwości zachodzenia pewnej identyczności między wielomianiami.
 
 \section{Lematy i twierdzenia o rozszerzeniach ciał}
 \begin{theorem}
-  Niech $F$ będzie ciałem a $p$ liczbą pierwszą. Następujące fakty są
+  Niech $F$ będzie ciałem, a $p$ liczbą pierwszą. Następujące fakty są
   równoważne.
 
   \begin{itemize}
@@ -190,7 +196,7 @@ niemożliwości zachodzenia pewnej identyczności między wielomianiami.
   Wynika wprost z \cite[Twierdzenie 14.1.1]{rom06}
 
 \begin{theorem}
-  Niech $F$ to ciało i $u \in F$.
+  Niech $F$ będzie ciałem oraz $u \in F$.
 
   Jeśli $p$ jest nieparzystą liczbą pierwszą i $p \in \N$ to wielomian
   $x^{p^m} - u$ jest nierozkładalny w ciele $F$, jeśli
@@ -200,11 +206,11 @@ niemożliwości zachodzenia pewnej identyczności między wielomianiami.
 
   Wynika wprost z \cite[Twierdzenie 14.1.2]{rom06}
 
-\begin{lemma}{Lemat o związku między prostymi rozszerzeniami}
+\begin{lemma}[o związku między prostymi rozszerzeniami]
   Niech $E$ będzie podciałem ciała $\C$ i $\overline{\Q} \subseteq E$.
   Niech $p$ będzie nieparzystą liczbą pierwszą.
-  Niech $n \in \N^+$ i $a, b \in E$ takie, że $x^p
-  - a, x^p - b$ są nierozkładalne w $E$.
+  Niech $n \in \N^+$ i $a, b \in E$ będą takie, że $x^p - a, x^p - b$ są
+  nierozkładalne w $E$.
   Jeśli dla pewnych rozwiązań $x^{p^n} - a, x^{p^n} -b$ mamy
   $E\left(\! \sqrt[p^n]{a}\right) = E\left(\! \sqrt[p^n]{b}\right)$ to $ab^t =
   c^{p^n}$ dla pewnego $c \in E$ i liczby całkowitej $t$ niepodzielnej przez
@@ -230,18 +236,19 @@ niemożliwości zachodzenia pewnej identyczności między wielomianiami.
 \end{proof}
 
 \begin{theorem}
-  Niech $p(x) \in F[x]$ to nierozkładalny w $F$ wielomian stopnia $n$.
-  Niech $K = F[x]/p(x)$. Wówczas $[K:F] = n$
+  Niech $p(x) \in F[x]$ będzie wielomianem nierozkładalnym stopnia $n$ oraz $K =
+  F[x]/p(x)$.
+  Wówczas $[K:F] = n$
   \label{th:13_1_6}
 \end{theorem}
 
   \cite[Twierdzenie 13.1.6]{dum04}
 
 \begin{theorem}
-  Niech $F, K$ to będą ciała takie, że $F \subseteq K$.
+  Niech $F, K$ będą ciałami takimi, że $F \subseteq K$.
   Jeśli $\alpha \in K, \alpha \not \in F$ i dla pewnego wielomianu
-  nierozkładalnego w $F$: $p(x) \in F[x]$ mamy $p(\alpha) = 0$ to
-  $F(\alpha) = F[x]/p(x)$
+  nierozkładalnego $p(x) \in F[x]$ mamy $p(\alpha) = 0$ to $F(\alpha) =
+  F[x]/p(x)$
   \label{th:13_1_4}
 \end{theorem}
 

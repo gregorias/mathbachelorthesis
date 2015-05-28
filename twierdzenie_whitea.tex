@@ -2,7 +2,7 @@
 \label{ch:white_theorem}
 \section{Wstęp}
 
-Niech $p$ będzie dowolną nieparzystą liczbą pierwszą. Rozważmy permutacje 
+Niech $p$ będzie dowolną nieparzystą liczbą pierwszą. Rozważmy permutacje
 ${t : x \rightarrow  x+1}$ i~${e: x \rightarrow x^p}$ zbioru liczb
 rzeczywistych. W 1986 Samuel White \cite{whi88} udowodnił, że dla dowolnych
 liczb liczb całkowitych
@@ -26,7 +26,7 @@ W tym rozdziale przedstawimy dowód tego twierdzenia oraz faktów pomocniczych.
 \label{sec:preparation}
 Niech $K = \overline{\Q}$ - domknięcie ciała liczb wymiernych, czyli zbiór
 wszystkich liczb algebraicznych.
-Niech $\xi$ to będzie dowolną liczba przestępna.
+Niech $\xi$ to będzie dowolną liczbą przestępną.
 Potrzebujemy zdefiniować ciąg liczb przestępnych będących wynikiem kolejnych
 aplikacji liter tworzących słowo $w$ na $\xi$.
 W tym celu oznaczmy sobie możliwe elementy słowa $w$.
@@ -52,21 +52,21 @@ Podobnie jak w dla $\xi_i$ definiujemy ciąg $\left(\mu_i\right)$ jako
 \[\mu_1 = \xi_1 = \xi, \mu_{j+1} = s_j\left(\mu_j\right)\]
 dla $1 \leq j \leq k$. Wówczas $\mu_{k+1} = \xi_{n+1} = w(\xi)$.
 
-Rozważmy teraz ciąg rozszerzeń ciała $K$:
+Rozważmy teraz ciąg rozszerzeń ciała $K$:\\
 $
 K\left(\xi_1\right),
 K\left(\xi_1, \xi_2\right),
 K\left(\xi_1, \xi_3\right),
 \ldots,
-K\left(\xi_1, \xi_{n+1}\right)$ i
-$
-K\left(\mu_1\right),
+K\left(\xi_1, \xi_{n+1}\right)$
+i~$K\left(\mu_1\right),
 K\left(\mu_1, \mu_2\right),
 \ldots,
 K\left(\mu_1, \mu_{n+1}\right)$.
 
 Aby udowodnić twierdzenie White'a potrzebne będzie indukcyjne udowodnienie
-silniejszej tezy. Mianowicie, że te dwa ciągi rozszerzeń tworzą wieże:
+silniejszej tezy.
+Mianowicie, że te dwa ciągi rozszerzeń tworzą wieże:
 
 \begin{equation}
 K\left(\xi_1\right) \subseteq
@@ -112,7 +112,7 @@ $K\left(\mu_1, \mu_{k+1}\right)$, ale nie zawiera się w $K\left(\mu_1,
 
 \section{Rezultat}
 
-Będziemy dowodzić 3 fakty równoczesną indukcyjną po długości $n$ słowa $w$.
+Będziemy dowodzić 3 tezy równoczesną indukcyjną po długości $n$ słowa $w$.
 
 Oznaczmy $K\left(\mu_1, \mu_j\right)$ jako $K_j$.
 
@@ -214,7 +214,7 @@ Załóżmy, że $H_1(n+1)$ nie zachodzi, tj. $K\left(\xi_1, \xi_{n+1}\right)$ ni
 zawiera się w $K\left(\xi_1, \xi_{n+2}\right)$. Wówczas $v_{n+1} = e_m$ i $m_k =
 0$.
 Naturalnie $\xi_{n+2} = v_{n+1}\left(\xi_{n+1}\right) \in
-K\left(\xi_{n+1}\right)$, czyli 
+K\left(\xi_{n+1}\right)$, czyli
 ${K\left(\xi_1, \xi_{n+2}\right) \subsetneq
 K\left(\xi_1, \xi_{n+1}\right)}$.
 Zauważmy, że jeśli $\xi_2 \in K\left(\xi_1\right)$ to z ostatniego zawierania w
@@ -228,7 +228,7 @@ Zatem musimy założyć, że $v_1 = r_{m_1}$ aby mieć $\xi_2 \not \in
 K\left(\xi_1\right)$.
 
 W celu uniknięcia wprowadzania dodatkowych symboli będziemy chcieli, aby
-zachodziło 
+zachodziło
 \begin{equation}
 K\left(\xi_1, \xi_{n+2}\right) \cap
 K\left(\xi_1, \xi_2\right) = K\left(\xi_1\right)
@@ -264,12 +264,13 @@ K\left(\mu_2\right)$ i $\mu_2 \in K_j$.
 Z tego, że $\mu_1 \in K_k, \mu_2 = \sqrt[p]{\mu_1}$ możemy zauważyć, że
 $\left[K_k : K_{k+1}\right] = p$.
 
-Będziemy chcieli pokazać, że $k$ musi być małe. Załóżmy , że $k \geq 3$.
+Będziemy chcieli pokazać, że $k$ musi być małe.
+Załóżmy, że $k \geq 3$.
 
-Niech $\omega \neq 1$ będzie $p$-tym pierwiastkiem jedności zawartym w $K_k$.
+Niech $\omega \neq 1$ będzie $p$-tym pierwiastkiem z jedności zawartym w $K_k$.
 Możemy zdefiniować $K_{k+1}$-automorfizm $\tau$ ciała $K_k$, który przekształca
 $\mu_2$ na $\omega \mu_2$.
-Zauważmy, że 
+Zauważmy, że
 \[K_2 = K\left(\mu_2\right) \cong K\left(\omega \mu_2\right) =
 \overline{K_2}\]
 Niech $\overline{\mu_3} = \tau(\mu_3) \in K_k$ i niech druga sylaba, $s_2$,
@@ -288,15 +289,15 @@ wystarczy odpowiednio dostosować $\mu_2$ i $l$ aby otrzymać równość
 $K_2 = K_3 \cap \overline{K_3}$.
 
 Teraz z lematu \ref{lem:associated_extensions} równość $K_2\left(\mu_3\right) =
-K_2\left(\overline{\mu_3}\right)$ implikuje, że dla pewnego $t$ 
+K_2\left(\overline{\mu_3}\right)$ implikuje, że dla pewnego $t$
 ($p \!\! \not \! | \; t$)
 mamy $\mu_3\overline{\mu_3}^t \in K\left(\mu_2\right)$. Podnosząc to do
 $p^l$-tej potęgi i zastępując $\mu_2$ przez $x$ otrzymamy równanie
 \[ f(x)f^t(\omega x) = h^{p^l}(x)\]
-To jest niemożliwe z lematu \ref{lem:main_polynomial_lemma}. 
+To jest niemożliwe z lematu \ref{lem:main_polynomial_lemma}.
 
 Zatem $k = 2$ i $w = r_{m_1}f$, gdzie $f$ jest słowem wielomianowym postaci
-$f_0^{p^l}(x)$, gdzie $v_{n+1} = e_l$. Mamy zatem $K_3 = K_1$, gdyż 
+$f_0^{p^l}(x)$, gdzie $v_{n+1} = e_l$. Mamy zatem $K_3 = K_1$, gdyż
 $\left[K_2 : K_3\right] = \left[K_2 : K_1\right] = p$ i $K_1 \subseteq K_3$.
 W takim razie $\mu_3 = f\left(\mu_2\right) \in K_1 = K\left(\mu_2^p\right)$. To
 prowadzi do $f(x) = g\left(x^p\right)$ i sprzeczności.
@@ -308,7 +309,7 @@ podsłowa $w$.
 Mając $H_2(n)$ musimy udowodnić, że $K_k \subsetneq K_{k+1}$, gdy $m_k \geq 1$.
 Załóżmy, że $H_2(n+1)$ nie zachodzi, czyli $K_k = K_{k+1}$. To oznacza, że
 $\mu_{k+1} \in K_k$, zatem $\mu_{k+1}^{p^{m_k -1}} \in K_k$.
-Możemy więc zastąpić $v_{n + 1} = r_{m_k}$ przez $r_1$ a przez to 
+Możemy więc zastąpić $v_{n + 1} = r_{m_k}$ przez $r_1$ a przez to
 $\mu_{k+1}$ staje się równe $\mu_{k+1}^{p^{m_k - 1}}$. Ta manipulacja daje nam
 $m_k = 1$ i nie zmienia siły wywodu, gdyż jeśli przy $m_k = 1$ dojdziemy do
 sprzecznego wniosku: $K_k \subsetneq K_{k+1}$, to dla większego $m_k$ tym
@@ -410,13 +411,13 @@ strony $\left[ K_{k+1} : K_{k-1} \right] = p^{l+1}$.  Zatem $F_1 = F_0
 
 Niech, więc $\tau$ będzie $F_0$-automorfizmem ciała $K_{k+1}$, które odwzorowuje
 $\mu_k \rightarrow \omega \mu_k$, gdzie $\omega \neq 1$ jest $p$-tym
-pierwiastkiem jedności. Niech $\overline{\mu}_{k+1} = \tau \left( \mu_{k+1}
+pierwiastkiem z jedności. Niech $\overline{\mu}_{k+1} = \tau \left( \mu_{k+1}
 \right) \in K_{k+1}$. Zatem $\overline{\mu}_{k+1}^p = f \left( \omega \mu_k
 \right) \in K \left( \mu_k \right)$.
 Zatem $K_k \left(\overline{\mu}_{k+1} \right)$ jest rozszerzeniem $K_k$
 stopnia $p$ zawartym w $K_{k+1}$, więc musi być identyczne z $K_{k+1}$.
 
-Z lematu \ref{lem:associated_extensions} istnieje $t$ takie, że 
+Z lematu \ref{lem:associated_extensions} istnieje $t$ takie, że
 $p \! \not \!\, | \; t$ i
 $\mu_{k+1} \overline{\mu}_{k+1}^t \in K_k$. Dodatkowo
 \[ K \left( \mu_k, \mu_{k+1} \overline{\mu}_{k+1}^t \right)
@@ -434,9 +435,9 @@ K\left(\mu_k, \lambda_2\right)\]
 
 Niech $\left[K\left(\mu_k\right)\left(\lambda_2\right) :
 K\left(\mu_k\right)\right] = p^m$.
-Wówczas 
+Wówczas
 $K\left(\mu_k\right)\left(\lambda_2^{p^{m-1}}\right)/K\left(\mu_k\right)$ jest
-rozszerzeniem stopnia $p$ zawartym w $K_k$, czyli jest równe 
+rozszerzeniem stopnia $p$ zawartym w $K_k$, czyli jest równe
 $K \left( \mu_k, \mu_{k+1} \overline{\mu}_{k+1}^t \right)$.
 Mamy zatem dla pewnego $s$ niepodzielnego przez $p$:
 \[\mu_{k+1} \overline{\mu}_{k+1}^tv_2^s \in K\left(\mu_k\right)\]
